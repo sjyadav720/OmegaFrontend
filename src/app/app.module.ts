@@ -20,6 +20,7 @@ import { CreditManagerModule } from './Modules/credit-manager/credit-manager.mod
 import { AccountHeadModule } from './Modules/account-head/account-head.module';
 import { DealerModule } from './Modules/dealer/dealer.module';
 import { TeleCallerModule } from './Modules/tele-caller/tele-caller.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TeleCallerModule } from './Modules/tele-caller/tele-caller.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     RelationExecutiveModule,
     OperationalExecutiveModule,

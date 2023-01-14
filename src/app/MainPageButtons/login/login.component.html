@@ -1,4 +1,17 @@
 <p>login works!</p>
+
+<!-- <form action="" [formGruop]>
+<input type="text" for>
 <input type="text">
-<input type="text">
-<input type="submit" routerLink="">
+<button  routerLink="role" (click)="gotoDash()">Login btn- GO TO DASH</button>
+</form> -->
+
+<div  [formGroup]="loginForm"  (ngSubmit)="gotoDash()">
+    <form >
+        <h2 >Login Form</h2>
+        <div ><i></i></div>
+           
+        <div ><input formControlName="userName" type="email" name="email" placeholder="Email"></div>
+        <div ><input formControlName="password"  type="password" name="password" placeholder="Password"></div>
+        <div ><button  type="submit">Log In</button></div><a href="#" class="forgot">Forgot your email or password?</a></form>
+</div>
