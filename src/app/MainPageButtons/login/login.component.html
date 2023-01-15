@@ -16,7 +16,7 @@
         <div ><button  type="submit">Log In</button></div><a href="#" class="forgot">Forgot your email or password?</a></form>
 </div> -->
 
-<div class="bootstrap-wrapper">
+<!-- <div class="bootstrap-wrapper">
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
@@ -46,4 +46,35 @@
             </div>
         </div>
     </div>
+</div> -->
+
+
+
+<div class="login-box">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="gotoDash()">
+        <div class="user-box">
+            <input type="text" name="" required="" formControlName="userName">
+            <label>Username</label>
+        </div>
+        <div class="user-box">
+            <input type="password" name=" " required=" " formControlName="password">
+            <label>Password</label>
+        </div>
+        <a href="# ">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button mat-raised-button color="primary" type="submit">Login</button>
+
+        </a>
+        <a href="# ">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button class="ml10" mat-raised-button color="accent" type="reset">Reset</button>
+        </a>
+    </form>
 </div>

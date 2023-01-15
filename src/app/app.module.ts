@@ -33,6 +33,7 @@ import { AccountHeadModule } from './Modules/account-head/account-head.module';
 import { DealerModule } from './Modules/dealer/dealer.module';
 import { TeleCallerModule } from './Modules/tele-caller/tele-caller.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatDividerModule,
     MatSidenavModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
