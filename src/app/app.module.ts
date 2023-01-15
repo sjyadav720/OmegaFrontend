@@ -34,6 +34,7 @@ import { DealerModule } from './Modules/dealer/dealer.module';
 import { TeleCallerModule } from './Modules/tele-caller/tele-caller.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
