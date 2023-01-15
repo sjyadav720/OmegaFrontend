@@ -1,4 +1,4 @@
-<p>login works!</p>
+<!-- <p>login works!</p> -->
 
 <!-- <form action="" [formGruop]>
 <input type="text" for>
@@ -6,7 +6,7 @@
 <button  routerLink="role" (click)="gotoDash()">Login btn- GO TO DASH</button>
 </form> -->
 
-<div  [formGroup]="loginForm"  (ngSubmit)="gotoDash()">
+<!-- <div  [formGroup]="loginForm"  (ngSubmit)="gotoDash()">
     <form >
         <h2 >Login Form</h2>
         <div ><i></i></div>
@@ -14,4 +14,36 @@
         <div ><input formControlName="userName" type="email" name="email" placeholder="Email"></div>
         <div ><input formControlName="password"  type="password" name="password" placeholder="Password"></div>
         <div ><button  type="submit">Log In</button></div><a href="#" class="forgot">Forgot your email or password?</a></form>
+</div> -->
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    <div class="container text-center mt20">
+                        <img src="../../../assets/pictures/login/logo.png" alt="" />
+                    </div>
+                    <h1 class="text-center">User Login !!</h1>
+                    <div class="container">
+                        <form [formGroup]="loginForm" (ngSubmit)="gotoDash()">
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input required matInput placeholder="Enter here..." formControlName="userName">
+                                <mat-hint>Valid Username !!</mat-hint>
+                            </mat-form-field>
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>User Password</mat-label>
+                                <input required type="password" matInput placeholder="Enter here..." formControlName="password">
+                            </mat-form-field>
+                            <div class="container text-center mb20">
+                                <button mat-raised-button color="primary" type="submit">Login</button>
+                                <button class="ml10" mat-raised-button color="accent" type="reset">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal  from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -22,18 +23,45 @@ export class LoginComponent {
   ps: any;
 
   gotoDash() {
+     
+   console.log(this.loginForm.value);
+  
     this.un = this.loginForm.controls['userName'].value;
     this.ps = this.loginForm.controls['password'].value;
-
+    Swal.fire({
+      position: 'top',
+      icon: 'success',
+      title: 'Login Successfully!',
+      showConfirmButton: false,
+      timer: 2500
+    })
     if (this.un === 're' && this.ps === 're') {
-      alert('RE loading');
       sessionStorage.setItem('role', 'relationexecutive');
       this.router.navigateByUrl('role/relationexecutive/enquiry');
     } 
-    if (this.un === 'oe' && this.ps === 'oe') {
+    else if (this.un === 'oe' && this.ps === 'oe') {
       alert('OE loading ');
       sessionStorage.setItem('role', 'operationalexecutive');
-      this.router.navigateByUrl('role/operationalexecutive/cibilscore');
+      this.router.navigateByUrl('role/operationalexecutive/viewenquiries');
+    }
+    else if (this.un === 'cm' && this.ps === 'cm') {
+      alert('creditmanager loading');
+      sessionStorage.setItem('role', 'creditmanager');
+      this.router.navigateByUrl('role/creditmanager/verifyloanformdocuments');
     } 
+    else if(this.un === 'ah' && this.ps === 'ah') {
+      alert('accounthead loading ');
+      sessionStorage.setItem('role', 'accounthead');
+      this.router.navigateByUrl('role/accounthead/generateledger');
+    } 
+    
+  else{
+    
+    Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Something went wrong!',
+    footer: 'Please Check UserName and Password ?'
+  }) 
   }
-}
+}}

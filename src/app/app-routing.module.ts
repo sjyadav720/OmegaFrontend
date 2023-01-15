@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule,Routes } from '@angular/router';
 import { EntryComponentComponent } from './MainPage/entry-component/entry-component.component';
 import { DashboardComponent } from './MainPageButtons/dashboard/dashboard.component';
 import { HomePageComponent } from './MainPageButtons/home-page/home-page.component';

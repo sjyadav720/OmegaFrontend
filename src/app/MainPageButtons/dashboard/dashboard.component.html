@@ -1,9 +1,53 @@
-<p>dashboard works!</p>
+
+<!-- <div class="conatiner">
+<div class="header">
 <app-dash-header></app-dash-header>
+</div> -->
 <!--to dashboard header with logout button-->
-
+<!-- <div class="sidebar">
 <app-side-menu></app-side-menu>
+</div> -->
 <!-- To Design sidebar with menus-->
-
+<!-- <div class="maincontain">
 <router-outlet></router-outlet>
+</div>
+</div> -->
 <!-- Each module's components will be displayed on clicking(menu items) in router outlet-->
+
+<!-- -----------------kunal--- -->
+
+ <div class="header">
+    <app-dash-header></app-dash-header>
+    </div> 
+
+<mat-sidenav-container class="container">
+    <mat-sidenav #sidebar mode="side" opened>
+        <!-- <app-sidebar [userRole]="role"></app-sidebar> -->
+        
+<app-side-menu></app-side-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <div class="toolbar">
+             <mat-toolbar>
+                <mat-icon (click)="sidebar.toggle()">menu</mat-icon>
+                <div class="box">
+                    <mat-icon (click)="onLogout()">logout</mat-icon>
+                    <!-- <mat-icon>bookmark_border</mat-icon>
+                    <mat-icon>mail_outline</mat-icon> -->
+                    
+                </div>
+             </mat-toolbar>
+            </div>
+            <div class="main">
+                Main Content Here....
+<!--                 
+                <h1>User Role: </h1>
+                <h2>{{role}}</h2> -->
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
