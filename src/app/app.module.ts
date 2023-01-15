@@ -11,6 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatSliderModule} from '@angular/material/slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +32,7 @@ import { CreditManagerModule } from './Modules/credit-manager/credit-manager.mod
 import { AccountHeadModule } from './Modules/account-head/account-head.module';
 import { DealerModule } from './Modules/dealer/dealer.module';
 import { TeleCallerModule } from './Modules/tele-caller/tele-caller.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RelationExecutiveModule,
@@ -67,7 +69,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],

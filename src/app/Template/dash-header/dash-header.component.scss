@@ -1,6 +1,6 @@
 .dashheader{
     margin: 0;
-    background-image: url(../../../assets/pictures/dash-header/2.jpg);
+    background-image: url(../../../assets/pictures/dash-header/bg91.jpg);
     background-position: 0%;
     background-repeat: no-repeat;
     background-size: 1350px;
@@ -8,4 +8,15 @@
 }
 h1{
     margin: 0;
+    color:rgb(218, 212, 210) ;
+    text-shadow: 2px 2px 8px #9eee09;
+    text-align: center;
+}
+img{
+    float: left;
+    margin: 0px 10px 0px 10px;
+    // border-radius: 45px;
+  height: 80px;
+  width: 150px;
+//   opacity: 0.3;
 }

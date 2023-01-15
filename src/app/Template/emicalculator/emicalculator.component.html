@@ -1,1 +1,115 @@
-<p>emicalculator works!</p>
+
+<body class="bg-light">
+
+
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6  mt20 text-center">
+            <mat-card>
+              <mat-card-content>
+                <div>
+                  <mat-label>
+                    <h1>EMI CALCULATOR</h1>
+                  </mat-label>
+                  <!-- Loan Amount -->
+                  <!-- <div class="example-container"> -->
+                  <mat-form-field class="example-full-width w-100">
+                    <mat-label>Loan Amount</mat-label>
+                    <input matInput placeholder="amount" type="number" [(ngModel)]="value">
+                  </mat-form-field>
+                  <!-- </div> -->
+                  <!-- <div class="example-label-container">
+                            <label id="example-name-label" class="example-name-label">Value</label>
+                            <label class="example-value-label">{{value}}</label>
+                          </div> -->
+                  <mat-slider color="accent" class="example-margin w-100" [disabled]="disabled" [max]="max" [min]="min"
+                    [step]="step" [discrete]="thumbLabel" [showTickMarks]="showTicks">
+                    <input matSliderThumb [(ngModel)]="value">
+                  </mat-slider>
+            
+  
+                  <!-- Tenure(Years) -->
+                  <mat-form-field class="example-full-width w-100">
+                    <mat-label>Tenure(Years)</mat-label>
+                    <input matInput placeholder="amount" type="number" [(ngModel)]="year">
+                  </mat-form-field>
+                
+                  <mat-slider color="accent" class="example-margin w-100" [disabled]="disabled1" [max]="max1" [min]="min1"
+                    [step]="step1" [discrete]="thumbLabel" [showTickMarks]="showTicks">
+                    <input matSliderThumb [(ngModel)]="year">
+                  </mat-slider>
+                  <!-- InterestRate -->
+                  <mat-form-field class="example-full-width w-100">
+                    <mat-label>Inerest Rate(%P.A.)</mat-label>
+                    <input matInput placeholder="amount" type="number" [(ngModel)]="interestrate">
+                  </mat-form-field>
+                  <mat-slider color="accent" class="example-margin w-100" [disabled]="disabled3" [max]="max3" [min]="min3"
+                    [step]="step3" [discrete]="thumbLabel" [showTickMarks]="showTicks">
+                    <input matSliderThumb [(ngModel)]="interestrate">
+                  </mat-slider>
+
+  
+                </div>
+                <div>
+                  <button mat-raised-button color="accent" (click)="btn()">Calculate</button>
+                </div>
+  
+  
+              </mat-card-content>
+            </mat-card>
+  
+          </div>
+
+          <div class="col-md-6  mt20 text-center">
+            <mat-card>
+              <mat-card-content>
+                <div class="container">
+                  <mat-label>
+                    <h1>EMI DETAILS</h1>
+                  </mat-label>
+                <table>
+                  <tr>
+                    <td>
+                      <mat-label>Principal Amount</mat-label>
+                    </td>
+                    <td>
+                      {{value | currency:"INR"}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <mat-label>Interest Amount </mat-label>
+                    </td>
+                    <td>
+                      {{emiInt | currency:"INR"}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+  
+                      <mat-label>Total Amount </mat-label>
+                    </td>
+                    <td>
+                      {{total| currency:"INR"}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <mat-label>Monthly EMI </mat-label>
+                    </td>
+                    <td>
+                      {{monthly | currency:"INR"}}
+                    </td>
+                  </tr>
+                </table>
+
+              </div>
+              </mat-card-content>
+            </mat-card>
+        </div>
+
+          </div>
+        </div>
+      </div>
+  </body>
