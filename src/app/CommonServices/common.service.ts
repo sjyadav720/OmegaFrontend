@@ -19,5 +19,8 @@ export class CommonService {
 
   }
 
+  view(){
+    return this.http.get("http://localhost:9999/enquiry/getallenquiry");
+  }
 
 }
