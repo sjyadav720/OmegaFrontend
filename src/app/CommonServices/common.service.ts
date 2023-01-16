@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+
 import { EnquiryDetails } from '../Models/enquiry-details';
-import { EnquiryFormComponent } from '../Modules/relation-executive/enquiry-form/enquiry-form.component';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +19,20 @@ export class CommonService {
 
   }
 
-  view(){
-    return this.http.get("http://localhost:9999/enquiry/getallenquiry");
-  }
+
+viewenuirydetails()
+{
+  console.log("serv") 
+return this.http.get("http://localhost:9999/enquiry/getallenquiry");
+
+}
+
+chkcibile(id:number){
+
+  return this.http.get("http://localhost:9999/enquiry/checkcibilscore/"+id);
+
+}
+
+
 
 }
