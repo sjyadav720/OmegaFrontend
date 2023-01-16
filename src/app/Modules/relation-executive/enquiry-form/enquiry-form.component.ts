@@ -19,7 +19,9 @@ export class EnquiryFormComponent implements OnInit {
         age:[],
         email:[],
         mobileNo:[],
-        pancardNo:[]
+        pancardNo:[],
+        enquiryStatus:[],
+        annualIncome:[]
       })
     }
     // get pancardNo(){

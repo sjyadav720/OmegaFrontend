@@ -8,4 +8,9 @@ export class EnquiryDetails {
 	email:string
 	mobileNo:number
 	pancardNo:String
+     enquiryStatus:string
+	 annualIncome:number
+	 
+
+
 }

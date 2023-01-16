@@ -6,7 +6,9 @@ import { LoanFormComponent } from './loan-form/loan-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ShowCibilVerifyComponent } from './view-enquiry/show-cibil-verify/show-cibil-verify.component';
 import { ShowCibilRejectedComponent } from './view-enquiry/show-cibil-rejected/show-cibil-rejected.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const reRouting: Routes = [
   { path: 'enquiry', component: EnquiryFormComponent },
@@ -17,7 +19,7 @@ const reRouting: Routes = [
 @NgModule({
   declarations: [EnquiryFormComponent, ViewEnquiryComponent, LoanFormComponent, ShowCibilVerifyComponent, ShowCibilRejectedComponent],
   imports: [CommonModule, RouterModule.forChild(reRouting),
-    ReactiveFormsModule,],
+    ReactiveFormsModule,FormsModule,HttpClientModule],
   exports: [EnquiryFormComponent, ViewEnquiryComponent, LoanFormComponent],
 })
 export class RelationExecutiveModule {}

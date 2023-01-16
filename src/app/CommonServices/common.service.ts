@@ -19,5 +19,18 @@ export class CommonService {
 
   }
 
+viewenuirydetails()
+{
+  console.log("serv") 
+return this.http.get("http://localhost:9999/enquiry/getallenquiry");
+
+}
+
+chkcibile(id:number){
+
+  return this.http.get("http://localhost:9999/enquiry/checkcibilscore/"+id);
+
+}
+
 
 }
