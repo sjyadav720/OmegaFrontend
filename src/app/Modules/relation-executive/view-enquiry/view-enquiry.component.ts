@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CommonService } from 'src/app/CommonServices/common.service';
@@ -9,6 +10,7 @@ import { EnquiryDetails } from 'src/app/Models/enquiry-details';
 
 
 
+
 @Component({
   selector: 'app-view-enquiry',
   templateUrl: './view-enquiry.component.html',
@@ -16,6 +18,7 @@ import { EnquiryDetails } from 'src/app/Models/enquiry-details';
 })
 export class ViewEnquiryComponent {
   myScriptElement:HTMLScriptElement;
+
 
 constructor(private fb:FormBuilder, public cs:CommonService){}
 enq:any[];
@@ -51,6 +54,7 @@ this.cs.chkcibile(id).subscribe((cb:any)=>{
   {
 
     alert("cibil not verified");
+
   }
 }
 )

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+
 import { EnquiryDetails } from '../Models/enquiry-details';
-import { EnquiryFormComponent } from '../Modules/relation-executive/enquiry-form/enquiry-form.component';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,7 @@ export class CommonService {
  return   this.http.post("http://localhost:9999/enquiry/saveenquirydetails",e);
 
   }
+
 
 viewenuirydetails()
 {
@@ -43,5 +44,6 @@ deleteRejectedData(id:number)
 return this.http.delete("http://localhost:9999/enquiry/deleteenquiry/"+id);
 
 }
+
 
 }
