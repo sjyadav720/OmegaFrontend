@@ -31,6 +31,17 @@ chkcibile(id:number){
   return this.http.get("http://localhost:9999/enquiry/checkcibilscore/"+id);
 
 }
+getbystatus(status:string)
+{
 
+return this.http.get("http://localhost:9999/enquiry/getenquiredpersonbystatus/"+status);
+
+}
+deleteRejectedData(id:number)
+{
+
+return this.http.delete("http://localhost:9999/enquiry/deleteenquiry/"+id);
+
+}
 
 }

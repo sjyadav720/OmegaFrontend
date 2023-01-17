@@ -1,0 +1,22 @@
+table {
+    overflow: hidden;
+    th,
+    td {
+        padding: .25em .5em;
+        text-align: left;
+        vertical-align: top;
+    }
+    th {
+        background-color: rgb(23, 222, 228);
+        color: #fff;
+    }
+    td {
+        background-color: #eee;
+    }
+    tr {
+        transition: all 1s ease-in-out;
+        &.slide-out {
+            transform: translateX(100%);
+        }
+    }
+}

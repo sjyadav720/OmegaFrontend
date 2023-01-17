@@ -40,17 +40,14 @@ export class LoginComponent {
       this.router.navigateByUrl('role/relationexecutive/enquiry');
     } 
     else if (this.un === 'oe' && this.ps === 'oe') {
-      alert('OE loading ');
       sessionStorage.setItem('role', 'operationalexecutive');
       this.router.navigateByUrl('role/operationalexecutive/viewenquiries');
     }
     else if (this.un === 'cm' && this.ps === 'cm') {
-      alert('creditmanager loading');
       sessionStorage.setItem('role', 'creditmanager');
       this.router.navigateByUrl('role/creditmanager/verifyloanformdocuments');
     } 
     else if(this.un === 'ah' && this.ps === 'ah') {
-      alert('accounthead loading ');
       sessionStorage.setItem('role', 'accounthead');
       this.router.navigateByUrl('role/accounthead/generateledger');
     } 

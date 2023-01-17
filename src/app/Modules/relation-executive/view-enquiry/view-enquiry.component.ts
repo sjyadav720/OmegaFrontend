@@ -5,8 +5,8 @@ import { EnquiryDetails } from 'src/app/Models/enquiry-details';
 
 
 
-declare var slideOut;
-declare var slideIn;
+// declare function slideIn():void;
+
 
 
 @Component({
@@ -15,6 +15,7 @@ declare var slideIn;
   styleUrls: ['./view-enquiry.component.scss']
 })
 export class ViewEnquiryComponent {
+  myScriptElement:HTMLScriptElement;
 
 constructor(private fb:FormBuilder, public cs:CommonService){}
 enq:any[];
@@ -26,29 +27,27 @@ this.enq=data.responceData
 
 
   })
-  }
-
-//   animation()
-//   {
+  
 
 // slideIn();
-// slideOut();
+// this.myScriptElement=document.createElement("script");
+// this.myScriptElement.src=""
 
-//   }
-
+//  }
+  }
 
  
 chkCibil(id:number){
 
 this.cs.chkcibile(id).subscribe((cb:any)=>{
 
-  if(cb==1)
+  if(cb==2)
   {
 
     alert("cibil verified");
 
   }
-  if(cb==2)
+  if(cb==1)
   {
 
     alert("cibil not verified");

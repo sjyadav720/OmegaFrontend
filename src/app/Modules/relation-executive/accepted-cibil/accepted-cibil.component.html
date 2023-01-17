@@ -1,6 +1,7 @@
-<p>view-enquiry works!</p>
+<p>accepted-cibil works!</p>
 
-<table class="zigzag">
+
+<table class="zigzag" border="1">
     <thead>
         <tr>
             <th>Customer ID</th>
@@ -27,37 +28,12 @@
             <td>{{e.mobileNo}}</td>
             <td>{{e.pancardNo}}</td>
             <td>{{e.annualIncome}}</td>
-            <td> <button (click)="chkCibil(e.customerId)">CheckCIBIL </button></td>
             <td>{{e.enquiryStatus}}</td>
+            <td> <button routerLink="/role/relationexecutive/loanform"> Loan Form Fill </button></td>
+
 
         </tr>
 
     </tbody>
 
 </table>
-
-<!-- <div class="div">
-
-    <table class="table" border="1">
-        <th>customerId</th>
-        <th>FirstName</th>
-        <th>lastName</th>
-        <th>age</th>
-        <th>email</th>
-        <th>mobileNo</th> -->
-
-
-<!-- 
-        <tr *ngFor="let x of enquiries">
-
-            <td> {{x.customerId}}</td>
-            <td> {{x.firstName}}</td>
-            <td> {{x.lastName}}</td>
-            <td> {{x.age}}</td>
-            <td> {{x.email}}</td>
-            <td> {{x.mobileNo}}</td>
-
-
-
-        </tr> -->
-<!-- </table> -->

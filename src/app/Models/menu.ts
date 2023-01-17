@@ -18,6 +18,16 @@ export class Menu {
           path: 'loanform',
           icon: '',
         },
+        {
+          title: 'AcceptedCibil ',
+          path: 'accepted',
+          icon: '',
+        },
+        {
+          title: 'rejectedCibil ',
+          path: 'rejected',
+          icon: '',
+        },
       ],
 
       operationalexecutive: [

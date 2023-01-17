@@ -1,0 +1,42 @@
+<p>rejected-cibil works!</p>
+
+
+<table class="zigzag" border="1">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>AGE</th>
+            <th>E-MAIL</th>
+            <th>MOBILE NO.</th>
+            <th>PAN CARD NO.</th>
+            <th> ANNUAL INC</th>
+            <th>CIBIL</th>
+            <th>Delete</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let r of rej ">
+            <td>{{r.customerId}}</td>
+            <td>{{r.firstName}}</td>
+            <td>{{r.lastName}}</td>
+            <td>{{r.age}}</td>
+            <td>{{r.email}}</td>
+            <td>{{r.mobileNo}}</td>
+            <td>{{r.pancardNo}}</td>
+            <td>{{r.annualIncome}}</td>
+            <td>{{r.enquiryStatus}}</td>
+            <td>
+                <button type="button" (click)="deleteRejectedData(r.customerId)">Delete</button>
+            </td>
+
+
+        </tr>
+        -
+    </tbody>
+
+</table>

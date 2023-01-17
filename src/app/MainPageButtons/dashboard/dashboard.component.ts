@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,13 @@ export class DashboardComponent {
     this.role=localStorage.getItem('role');
   }
   onLogout(){
-    alert('logout')
+    Swal.fire({
+    position: 'top',
+    icon: 'success',
+    title: 'Log-Out Successfully!',
+    showConfirmButton: false,
+    timer: 2500,
+  })
     localStorage.removeItem('role');
     localStorage.clear();
     this.router.navigateByUrl('/home')

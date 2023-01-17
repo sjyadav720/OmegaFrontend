@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
 
+  images=
+  [
+    // {path:'/'},
+    // {path:'/'},
+    {path:'/assets/pictures/header/bg94.jpg'},
+  ]
 }

@@ -12,36 +12,36 @@
                     
                 </ul>
                 <hr> -->
-               <!-- ku sidebar-- -->
-               <div class="navbar">
-                <div class="top">
-                    <!-- <mat-icon>notifications_none</mat-icon> -->
-                </div>
-                <div class="user">
-                    <img src="../../../assets/pictures/login/logo.png" alt="user.png">
-                    <h4 class="name">{{role}}</h4>
-                </div>
-                <div class="menu">
-                   
-                    <div>
-                        <mat-divider class="mat-divider"></mat-divider>
-                    </div>
-                    
-                    <div class="menu-item" *ngFor="let item of menuItems[0][role]">
-                        <!-- Static Menus Items -->
-                        <button mat-button class="menu-button"  [routerLink]="[role,item.path]">
+<!-- ku sidebar-- -->
+<div class="navbar">
+    <div class="top">
+        <!-- <mat-icon>notifications_none</mat-icon> -->
+    </div>
+    <div class="user">
+        <img src="../../../assets/pictures/login/logo.png" alt="user.png">
+        <h4 class="name">{{role}}</h4>
+    </div>
+    <div class="menu">
+
+        <div>
+            <mat-divider class="mat-divider"></mat-divider>
+        </div>
+
+        <div class="menu-item" *ngFor="let item of menuItems[0][role]">
+            <!-- Static Menus Items -->
+            <button mat-button class="menu-button" [routerLink]="[role,item.path]">
                             <mat-icon >arrow_forward_ios</mat-icon>
                             <span>{{item.title}}</span>
                         </button>
-            
-                    </div>
-            
-                </div>
-            
-            </div>
 
-                <!-- -----------------kunal--- -->
-                
+        </div>
+
+    </div>
+
+</div>
+
+<!-- -----------------kunal--- -->
+
 <!-- 
 <mat-sidenav-container class="container">
     <mat-sidenav #sidebar mode="side" opened>
@@ -54,7 +54,7 @@
                 <mat-icon (click)="sidebar.toggle()">menu</mat-icon>
                 <div class="box">
                     <mat-icon (click)="onLogout()">logout</mat-icon> -->
-                    <!-- <mat-icon>bookmark_border</mat-icon>
+<!-- <mat-icon>bookmark_border</mat-icon>
                     <mat-icon>mail_outline</mat-icon> -->
 <!--                     
                 </div>
@@ -65,8 +65,8 @@
 <!--                 
                 <h1>User Role: </h1>
                  <h2>{{role}}</h2> -->
-                <!-- <router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet>
             </div>
         </div>
     </mat-sidenav-content>
-</mat-sidenav-container> --> 
+</mat-sidenav-container> -->
