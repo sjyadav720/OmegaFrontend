@@ -24,6 +24,7 @@
     "@grapecity/gcpdfviewer": "^4.0.1",
     "angular-responsive-carousel": "^2.1.2",
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.3",
     "jquery": "^3.6.3",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.7.0",

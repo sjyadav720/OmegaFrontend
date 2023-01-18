@@ -1,27 +1,35 @@
-* {
-    margin: 0;
-    padding: 0;
+.sidefooter {
+    background-color: aqua; // background-image: url("../../../assets/pictures/header/business-bg.jpg");
+    background-position: 0%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50%;
+    float: left;
+    height: 250px;
+    color: white;
+    text-align: center;
 }
 
-html,
-body {
-    height: 100%;
+.gmap {
+    width: 50%;
+    float: left;
+    height: 125px;
 }
 
-#container {
-    min-height: 100%;
+.copy {
+    text-align: center;
+    background-color: #0f4457;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
-main {
-    overflow: auto;
-    padding-bottom: 100px;
-    height: 1000px;
+a {
+    color: white;
 }
 
-#footer {
-    background-color: rgb(12, 43, 180);
-    position: relative;
-    height: 300px;
-    margin-top: -200px;
-    clear: both;
+.copyright {
+    float: left;
+    display: block;
+    width: 100%;
 }
