@@ -37,6 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +77,10 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     MatSidenavModule,
     MatSliderModule,
     HttpClientModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    
+
+
   ],
   providers: [],
   bootstrap: [AppComponent],

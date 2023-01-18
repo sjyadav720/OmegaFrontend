@@ -9,6 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { RejectedCibilComponent } from './rejected-cibil/rejected-cibil.component';
 import { AcceptedCibilComponent } from './accepted-cibil/accepted-cibil.component';
 
+// --- Kunal Jadhav Start
+
+import {MatListModule} from '@angular/material/list';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatCardModule} from '@angular/material/card';
+//--- End
+
 
 const reRouting: Routes = [
   { path: 'enquiry', component: EnquiryFormComponent },
@@ -24,7 +35,18 @@ const reRouting: Routes = [
 @NgModule({
   declarations: [EnquiryFormComponent, ViewEnquiryComponent, LoanFormComponent, RejectedCibilComponent, AcceptedCibilComponent],
   imports: [CommonModule, RouterModule.forChild(reRouting),
-    ReactiveFormsModule,FormsModule,HttpClientModule],
+    ReactiveFormsModule,FormsModule,HttpClientModule,
+    //kunal Jadhav
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatListModule,
+    MatRadioModule,
+    MatStepperModule,
+    MatCardModule
+    //
+  
+  ],
   exports: [EnquiryFormComponent, ViewEnquiryComponent, LoanFormComponent,RejectedCibilComponent,AcceptedCibilComponent],
 })
 export class RelationExecutiveModule {}
