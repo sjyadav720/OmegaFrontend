@@ -20,7 +20,7 @@ export class DashboardComponent {
     icon: 'success',
     title: 'Log-Out Successfully!',
     showConfirmButton: false,
-    timer: 2500,
+    timer: 5000,
   })
     localStorage.removeItem('role');
     localStorage.clear();

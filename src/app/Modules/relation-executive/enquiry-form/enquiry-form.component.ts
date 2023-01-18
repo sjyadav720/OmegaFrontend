@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from 'src/app/CommonServices/common.service';
 import { EnquiryDetails } from 'src/app/Models/enquiry-details';
 
@@ -11,6 +11,8 @@ import { EnquiryDetails } from 'src/app/Models/enquiry-details';
 export class EnquiryFormComponent implements OnInit {
     constructor(private fb:FormBuilder, public cs:CommonService){}
     enqForm:FormGroup;
+
+
     ngOnInit(){
       this.enqForm=this.fb.group({
         customerId:[],
@@ -18,10 +20,10 @@ export class EnquiryFormComponent implements OnInit {
         lastName:[],
         age:[],
         email:[],
-        mobileNo:[],
-        pancardNo:[],
+        mobileNo:['',Validators.required],
+        pancardNo:['',Validators.required],
         enquiryStatus:[],
-        annualIncome:[]
+        annualIncome:['',Validators.required]
       })
     }
     // get pancardNo(){

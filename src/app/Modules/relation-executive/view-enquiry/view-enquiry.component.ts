@@ -21,6 +21,8 @@ export class ViewEnquiryComponent {
 
 
 constructor(private fb:FormBuilder, public cs:CommonService){}
+
+
 enq:any[];
 
   ngOnInit() {
@@ -47,15 +49,18 @@ this.cs.chkcibile(id).subscribe((cb:any)=>{
   if(cb==2)
   {
 
-    alert("cibil verified");
+    alert("cibil accepted");
 
   }
   if(cb==1)
   {
 
-    alert("cibil not verified");
+    alert("cibil rejected");
 
   }
+this.ngOnInit();
+
+  
 }
 )
 

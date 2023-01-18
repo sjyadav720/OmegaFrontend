@@ -23,7 +23,10 @@ ngOnInit()
 
 deleteRejectedData(id:number)
 {
+
 this.cs.deleteRejectedData(id).subscribe((result)=>{
+  this.ngOnInit();
+
 
     // console.log(result);
 
