@@ -6,25 +6,24 @@ import { CommonService } from 'src/app/CommonServices/common.service';
 @Component({
   selector: 'app-accepted-cibil',
   templateUrl: './accepted-cibil.component.html',
-  styleUrls: ['./accepted-cibil.component.scss']
+  styleUrls: ['./accepted-cibil.component.scss'],
 })
 export class AcceptedCibilComponent {
+  constructor(
+    private fb: FormBuilder,
+    public cs: CommonService,
+    private route: Router
+  ) {}
+  enq: any[];
 
-
-  constructor(private fb:FormBuilder, public cs:CommonService,private rout:Router){}
-  enq:any[];
-
-    ngOnInit() {
-    this.cs.getbystatus("Cibil Approved").subscribe((data:any)=>{
-    
-    this.enq=data.responceData
-
-    })
-    }
-
-
-  
-    
-
-
+  ngOnInit() {
+    this.cs.getbystatus('Cibil Approved').subscribe((data: any) => {
+      this.enq = data.responceData;
+    });
   }
+
+  goToLoanForm() {
+    alert('in loan form');
+    this.route.navigateByUrl('/role/relationexecutive/loanform');
+  }
+}
