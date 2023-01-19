@@ -149,8 +149,8 @@
         </mat-step>
         <!-- step 3 -->
         <mat-step>
-          <div formGroupName="professionDetails">
-            <ng-template matStepLabel>Professional Details</ng-template>
+          <div formGroupName="customerProfession">
+            <ng-template matStepLabel>Profession Details</ng-template>
             <!-- professionId -->
             <mat-form-field appearance="fill">
               <mat-label>professionId</mat-label>
@@ -170,6 +170,11 @@
             <mat-form-field appearance="fill">
               <mat-label>professionDesignation</mat-label>
               <input matInput formControlName="professionDesignation" placeholder="professionDesignation">
+            </mat-form-field>
+            <!--professionWorkingPeriod  -->
+            <mat-form-field appearance="fill">
+              <mat-label>professionWorkingPeriod</mat-label>
+              <input matInput formControlName="professionWorkingPeriod" placeholder="professionWorkingPeriod" type="number">
             </mat-form-field>
             <div>
               <button mat-button matStepperPrevious>Back</button>&nbsp;

@@ -3,4 +3,5 @@ export class Profession {
     professionType:string;
     professionMonthlyIncome:number;
     professionDesignation:string;
+    professionWorkingPeriod:number;
 }
