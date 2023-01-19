@@ -1,18 +1,20 @@
 .dashheader {
     margin: 0;
-    //  background-image: url(../../../assets/pictures/dash-header/bg91.jpg);
-    background-position: 0%;
-    background-repeat: no-repeat;
-    background-size: 1350px;
+    
+background-image:linear-gradient(to bottom right, rgb(48, 63, 159), rgb(255, 64, 129));
+    
+background-size: 100%;
+
     height: 80px;
-    background-color: #07e9d6;
+    // background-color: #07e9d6;
 }
 
 h1 {
     margin: 0;
-    color: rgb(218, 212, 210);
-    text-shadow: 2px 2px 8px #9eee09;
-    text-align: center;
+    color: white;
+    // text-shadow: 2px 2px 8px #9eee09;
+    padding-top: 20px;
+    font-size: 40px;
 }
 
 img {

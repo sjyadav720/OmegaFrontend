@@ -11,6 +11,8 @@ export class HomePageComponent {
   [
     // {path:'/'},
     // {path:'/'},
+    {path:'/assets/pictures/dash-header/2.jpg'},
+    {path:'/assets/pictures/dash-header/bg91.jpg'},
     {path:'/assets/pictures/header/bg94.jpg'},
   ]
 }
