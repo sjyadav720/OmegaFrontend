@@ -8,7 +8,7 @@
     width: 25%;
     padding-top: 12px;
     padding-bottom: 5px;
-    background-color: #5cddb7;
+    background-color: rgb(48, 63, 159);
     float: left;
 }
 
@@ -16,20 +16,24 @@
     width: 25%;
     padding-top: 12px;
     padding-bottom: 5px;
-    background-color: #33d4a5;
+    background-color: rgb(34, 45, 119);
     float: left;
 }
 
-.big {
+.big 
+{
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 700;
+    padding-bottom: 9px;
     text-align: center;
+    color: white;
 }
 
 .smalltext {
     font-size: 15px;
-    font-weight: bold;
+    // font-weight: bold;
     text-align: center;
+    color: white;
 }
 
 // SHOW SOME CONTAIN CSS

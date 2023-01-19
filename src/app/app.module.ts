@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import {MatSidenavContainer, MatSidenavModule} from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatTableModule} from '@angular/material/table';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatSliderModule} from '@angular/material/slider';
+import {
+  MatSidenavContainer,
+  MatSidenavModule,
+} from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,9 +39,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +52,6 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     DashHeaderComponent,
     CalculatorComponent,
     EMICalculatorComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -78,9 +77,6 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     MatSliderModule,
     HttpClientModule,
     IvyCarouselModule,
-    
-
-
   ],
   providers: [],
   bootstrap: [AppComponent],

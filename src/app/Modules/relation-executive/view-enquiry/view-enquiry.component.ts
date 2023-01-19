@@ -1,38 +1,34 @@
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Route, Router } from '@angular/router';
+
+import { Router } from '@angular/router';
+
 import { CommonService } from 'src/app/CommonServices/common.service';
 import { BaseResponse } from 'src/app/Models/base-response';
 import { EnquiryDetails } from 'src/app/Models/enquiry-details';
 
-
-
 // declare function slideIn():void;
-
-
-
 
 @Component({
   selector: 'app-view-enquiry',
   templateUrl: './view-enquiry.component.html',
-  styleUrls: ['./view-enquiry.component.scss']
+  styleUrls: ['./view-enquiry.component.scss'],
 })
 export class ViewEnquiryComponent {
-  myScriptElement:HTMLScriptElement;
+  myScriptElement: HTMLScriptElement;
 
-
+ 
 constructor(private fb:FormBuilder, public cs:CommonService, private router:Router){}
 
 
-enq:BaseResponse[];
+enqData:BaseResponse[];
 
   ngOnInit() {
   // this.cs.viewenuirydetails().subscribe((data:any)=>{
   // this.enq=data.responceData
   // })
   this.cs.getbystatus("Enquired").subscribe((response:any)=>{
-    this.enq=response.responceData
+    this.enqData=response.responceData
 });
   
 
@@ -61,15 +57,7 @@ this.cs.chkcibile(id).subscribe((cb:any)=>{
     this.router.navigateByUrl("/role/relationexecutive/rejected");
   }
 this.ngOnInit();
+    });
+  }
 
-  
 }
-)
-
-
-
-
-
-}}
-
-

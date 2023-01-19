@@ -1,9 +1,11 @@
 .sidefooter {
-    background-color: aqua; // background-image: url("../../../assets/pictures/header/business-bg.jpg");
-    background-position: 0%;
-    background-repeat: no-repeat;
+    // background-color: rgb(48, 63, 159); // background-image: url("../../../assets/pictures/header/business-bg.jpg");
+    // background-position: 0%;
+    // background-repeat: no-repeat;
+    
+background-image:linear-gradient(to bottom right, rgb(48, 63, 159), rgb(255, 64, 129));
     background-size: 100%;
-    width: 50%;
+    width: 100%;
     float: left;
     height: 250px;
     color: white;
@@ -18,7 +20,8 @@
 
 .copy {
     text-align: center;
-    background-color: #0f4457;
+    // background-color: #0f4457;
+    background-color:  rgb(34, 45, 119);
     color: white;
     padding-top: 12px;
     padding-bottom: 12px;

@@ -7,9 +7,10 @@ import { BaseResponse } from 'src/app/Models/base-response';
 @Component({
   selector: 'app-accepted-cibil',
   templateUrl: './accepted-cibil.component.html',
-  styleUrls: ['./accepted-cibil.component.scss']
+  styleUrls: ['./accepted-cibil.component.scss'],
 })
 export class AcceptedCibilComponent {
+
 
 
   constructor(private fb:FormBuilder, public cs:CommonService,private router:Router){}
@@ -27,3 +28,4 @@ export class AcceptedCibilComponent {
 
 
   }
+

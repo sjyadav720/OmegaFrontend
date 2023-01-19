@@ -10,13 +10,11 @@ import { EnquiryDetails } from '../Models/enquiry-details';
 import { Profession } from '../Models/profession';
 import { VehicleDetails } from '../Models/vehicle-details';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CommonService {
-
-  customerdetails:Customer={
+  customerdetails: Customer = {
     customerId: 0,
     customerFirstName: '',
     customerMiddleName: '',
@@ -31,54 +29,48 @@ export class CommonService {
     customerQualification: '',
     customerCibilScore: 0,
     customerLoanStatus: '',
-    customerAddress: new CustomerAddress,
-    customerProfession: new Profession,
-    customerBankDetails: new CustomerBankDetails,
-    vehicleDetails: new VehicleDetails,
-    dealerBankDetails: new DealerBankDetails,
-    customerAllDocuments: new CustomerAllDocuments,
-   
+    customerAddress: new CustomerAddress(),
+    customerProfession: new Profession(),
+    customerBankDetails: new CustomerBankDetails(),
+    vehicleDetails: new VehicleDetails(),
+    dealerBankDetails: new DealerBankDetails(),
+    customerAllDocuments: new CustomerAllDocuments(),
+  };
+
+  constructor(private http: HttpClient) {}
+
+  saveenquirydetails(e: EnquiryDetails) {
+    return this.http.post(
+      'http://localhost:9999/enquiry/saveenquirydetails',
+      e
+    );
   }
 
-  constructor(private http:HttpClient) { }
-  
-  saveenquirydetails(e:EnquiryDetails)
-  {
+  // viewenuirydetails()    //get all
+  // {
+  //   console.log("serv")
+  // return this.http.get("http://localhost:9999/enquiry/getallenquiry/");
 
+  // }
 
- return   this.http.post("http://localhost:9999/enquiry/saveenquirydetails",e);
-
+  chkcibile(id: number) {
+    return this.http.get('http://localhost:9999/enquiry/checkcibilscore/' + id);
+  }
+  getbystatus(status: string) {
+    return this.http.get(
+      'http://localhost:9999/enquiry/getenquiredpersonbystatus/' + status
+    );
+  }
+  deleteRejectedData(id: number) {
+    return this.http.delete(
+      'http://localhost:9999/enquiry/deleteenquiry/' + id
+    );
   }
 
-
-viewenuirydetails()
-{
-  console.log("serv") 
-return this.http.get("http://localhost:9999/enquiry/getallenquiry");
-
-}
-
-chkcibile(id:number){
-
-  return this.http.get("http://localhost:9999/enquiry/checkcibilscore/"+id);
-
-}
-getbystatus(status:string)
-{
-
-return this.http.get("http://localhost:9999/enquiry/getenquiredpersonbystatus/"+status);
-
-}
-deleteRejectedData(id:number)
-{
-
-return this.http.delete("http://localhost:9999/enquiry/deleteenquiry/"+id);
-
-}
-
-saveLoanApplicationFormData(data:any){
-  return this.http.post("http://localhost:9999/customer/saveCustomerDetails",data);
-}
-
-
+  saveLoanApplicationFormData(data: any) {
+    return this.http.post(
+      'http://localhost:9999/customer/saveCustomerDetails',
+      data
+    );
+  }
 }
