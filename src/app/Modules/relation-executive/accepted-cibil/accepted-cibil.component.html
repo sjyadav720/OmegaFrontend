@@ -14,14 +14,17 @@
             <th> ANNUAL INC</th>
             <th>CIBIL</th>
             <!-- <th>Enquiry Status</th> -->
+
             
             <th>Generated CIBIL Score</th>
            <th>Fill Form</th>
+
+
         </tr>
     </thead>
     <tbody>
 
-        <tr *ngFor="let e of enq ">
+        <tr *ngFor="let e of enqData ">
             <td>{{e.customerId}}</td>
             <td>{{e.firstName}}</td>
             <td>{{e.lastName}}</td>

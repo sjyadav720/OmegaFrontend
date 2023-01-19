@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { CommonService } from 'src/app/CommonServices/common.service';
+import { BaseResponse } from 'src/app/Models/base-response';
 
 @Component({
   selector: 'app-rejected-cibil',
@@ -11,13 +12,12 @@ export class RejectedCibilComponent {
 
 constructor(private fb:FormBuilder,public cs:CommonService){}
 
-rej:any[];
+rejectData:BaseResponse[];
 ngOnInit()
 {
 
-  this.cs.getbystatus("Cibil Rejected").subscribe((data:any)=>{
-    this.rej=data.responceData
-
+  this.cs.getbystatus("Cibil Rejected").subscribe((response:any)=>{
+    this.rejectData=response.responceData
 });
 }
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonService } from 'src/app/CommonServices/common.service';
+import { BaseResponse } from 'src/app/Models/base-response';
 
 @Component({
   selector: 'app-accepted-cibil',
@@ -9,21 +10,22 @@ import { CommonService } from 'src/app/CommonServices/common.service';
   styleUrls: ['./accepted-cibil.component.scss'],
 })
 export class AcceptedCibilComponent {
-  constructor(
-    private fb: FormBuilder,
-    public cs: CommonService,
-    private route: Router
-  ) {}
-  enq: any[];
 
-  ngOnInit() {
-    this.cs.getbystatus('Cibil Approved').subscribe((data: any) => {
-      this.enq = data.responceData;
-    });
+
+
+  constructor(private fb:FormBuilder, public cs:CommonService,private router:Router){}
+  enqData:BaseResponse[];
+
+    ngOnInit() {
+    this.cs.getbystatus("Cibil Approved").subscribe((response:any)=>{
+    this.enqData=response.responceData
+    })
+    }
+    fillLoanApplication(){
+      this.router.navigateByUrl("/role/relationexecutive/loanform");
+    }
+    
+
+
   }
 
-  goToLoanForm() {
-    alert('in loan form');
-    this.route.navigateByUrl('/role/relationexecutive/loanform');
-  }
-}

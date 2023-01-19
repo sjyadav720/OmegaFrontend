@@ -1,51 +1,60 @@
-<!-- <form [formGroup]="enqForm" (ngSubmit)="sendData()">
-    <table>
-        <tbody>
-            <h1 ALIGN="CENTER">Enquiry Form</h1>
-            <tr>
-                <td><label for="customerid">Customer Id: </label></td>
-                <td><input id="id" maxlength="50" type="number" formControlName="customerId" /></td>
-            </tr>
 
-            <tr>
-                <td><label for="firstName">First Name: </label></td>
-                <td><input id="name" maxlength="50" type="text" formControlName="firstName" /></td>
-            </tr>
+<div>
+    <div>
+        <mat-card-content><h1 class="text-center my-3">ENQUIRY FORM</h1></mat-card-content></div>
+<div class="container1">
+<mat-card>
+    <form [formGroup]="enqForm" (ngSubmit)="sendData()"> 
+        <div class="container">
+        <mat-form-field class="example-full-width">
+            <mat-label>Customer Id</mat-label>
+            <input matInput placeholder="Enter Here..." formControlName="customerId" type="number" >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="Enter Here..." formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Enter Here..." formControlName="lastName">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Enter Here..." formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Age</mat-label>
+            <input matInput placeholder="Enter Here..." formControlName="age" type="number" >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Mobile</mat-label>
+            <input required matInput placeholder="Enter Here..." formControlName="mobileNo" type="number" >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>PAN Card</mat-label>
+            <input matInput placeholder="Enter Here..." formControlName="pancardNo">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Annual Income</mat-label>
+            <input matInput placeholder="Enter Here..." formControlName="annualIncome" type="number">
+        </mat-form-field>
+        <div class="p-2 text-center">
+            <button mat-raised-button color="primary" class="mr-20" type="reset">Reset</button> &nbsp;
+            <button mat-raised-button color="accent" type="submit">Submit</button>
+        </div>
+        </div>
+    </form>
 
-            <tr>
-                <td><label for="lastName">Last Name: </label></td>
-                <td><input id="course" maxlength="50" type="text" formControlName="lastName" /></td>
-            </tr>
+                              
+</mat-card>
+</div>
 
-            <tr>
-                <td><label for="age">Age: </label></td>
-                <td><input id="course" maxlength="50" type="number" formControlName="age" /></td>
-            </tr>
-
-            <tr>
-                <td><label for="email">Email: </label></td>
-                <td><input id="branch" maxlength="50" type="email" formControlName="email" /></td>
-            </tr>
-
-            <tr>
-                <td><label for="mobileNo">Mobile Number: </label></td>
-                <td><input id="rollno" maxlength="50" name="rollno" type="number" formControlName="mobileNo" /></td>
-            </tr>
-
-            <tr>
-                <td><label for="pancardNo">Pancard Number: </label></td>
-                <td><input id="email" maxlength="50" name="email" type="text" formControlName="pancardNo" /></td>
-                <span>This is not valid</span>
-            </tr>
-
-            <tr>
-                <td align="right"><input name="Submit" type="Submit" value="Submit" /></td>
-            </tr>
-
-        </tbody>
-    </table>
-</form> -->
-<section class="vh-100" style="background-color: rgb(238, 238, 238);">
+<div class="container2">
+    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp " class="img-fluid " alt="Sample image ">
+</div>
+</div>
+  
+<!-- <section class="vh-100" style="background-color: rgb(238, 238, 238);">
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-12 col-xl-15">
@@ -108,4 +117,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
