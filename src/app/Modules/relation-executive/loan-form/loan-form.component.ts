@@ -117,7 +117,7 @@ export class LoanFormComponent {
   incomeProof: any;
   photo: any;
   signature: any;
-  aadharCard: any;
+  adhaarCard: any;
   bankPassBook: any;
   onselectfile1(event) {
  
@@ -130,7 +130,7 @@ export class LoanFormComponent {
     this.photo = event.target.files[0];
   }
   onselectfile4(event) {
-    this.aadharCard = event.target.files[0];
+    this.adhaarCard = event.target.files[0];
   }
   onselectfile5(event) {
     this.signature = event.target.files[0];
@@ -175,7 +175,7 @@ export class LoanFormComponent {
   data.append("allData", allData);
   data.append("panCard", this.panCard);   
   data.append("incomeProof", this.incomeProof);
-  data.append("aadharCard", this.aadharCard);
+  data.append("adhaarCard", this.adhaarCard);
   data.append("photo", this.photo);
   data.append("signature", this.signature);
   data.append("bankPassBook", this.bankPassBook);
