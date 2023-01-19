@@ -1,7 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { CommonService } from 'src/app/CommonServices/common.service';
+import { BaseResponse } from 'src/app/Models/base-response';
 import { EnquiryDetails } from 'src/app/Models/enquiry-details';
 
 
@@ -20,18 +22,18 @@ export class ViewEnquiryComponent {
   myScriptElement:HTMLScriptElement;
 
 
-constructor(private fb:FormBuilder, public cs:CommonService){}
+constructor(private fb:FormBuilder, public cs:CommonService, private router:Router){}
 
 
-enq:any[];
+enq:BaseResponse[];
 
   ngOnInit() {
-  this.cs.viewenuirydetails().subscribe((data:any)=>{
-  
-this.enq=data.responceData
-
-
-  })
+  // this.cs.viewenuirydetails().subscribe((data:any)=>{
+  // this.enq=data.responceData
+  // })
+  this.cs.getbystatus("Enquired").subscribe((response:any)=>{
+    this.enq=response.responceData
+});
   
 
 // slideIn();
@@ -45,18 +47,18 @@ this.enq=data.responceData
 chkCibil(id:number){
 
 this.cs.chkcibile(id).subscribe((cb:any)=>{
-
-  if(cb==2)
-  {
-
-    alert("cibil accepted");
-
-  }
   if(cb==1)
   {
 
-    alert("cibil rejected");
+    alert("Cibil Accepted");
+    this.router.navigateByUrl("/role/relationexecutive/accepted");
 
+  }
+  if(cb==2)
+  {
+
+    alert("Cibil Rejeted");
+    this.router.navigateByUrl("/role/relationexecutive/rejected");
   }
 this.ngOnInit();
 
