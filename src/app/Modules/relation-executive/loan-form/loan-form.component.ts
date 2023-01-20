@@ -9,20 +9,23 @@ import { CommonService } from 'src/app/CommonServices/common.service';
 })
 export class LoanFormComponent {
   constructor(private fb: FormBuilder, private cs: CommonService) {}
-  ngOnInit() {}
+  ngOnInit() {
+
+    
+  }
 
   isLinear = true;
   Empregister = this.fb.group({
     //customer Details FormGroup Controls
     customer: this.fb.group({
-      customerId: this.fb.control(0, Validators.required),
-      customerFirstName: this.fb.control('', Validators.required),
-      customerMiddleName: this.fb.control('', Validators.required),
-      customerLastName: this.fb.control('', Validators.required),
-      customerPanCard: this.fb.control('', Validators.required),
-      customerAadharCard: this.fb.control(0, Validators.required),
-      customerDateOfBirth: this.fb.control('', Validators.required),
-      customerMobileNumber: this.fb.control(0, Validators.required),
+      customerId: this.fb.control(this.cs.customerdetails.customerId, Validators.required),
+      customerFirstName: this.fb.control(this.cs.customerdetails.customerFirstName, Validators.required),
+      customerMiddleName: this.fb.control(this.cs.customerdetails.customerMiddleName, Validators.required),
+      customerLastName: this.fb.control(this.cs.customerdetails.customerLastName, Validators.required),
+      customerPanCard: this.fb.control(this.cs.customerdetails.customerPanCard, Validators.required),
+      customerAadharCard: this.fb.control(this.cs.customerdetails.customerAadharCard, Validators.required),
+      customerDateOfBirth: this.fb.control(this.cs.customerdetails.customerDateOfBirth, Validators.required),
+      customerMobileNumber: this.fb.control(this.cs.customerdetails.customerMobileNumber, Validators.required),
       customerAlternateMobileNumber: this.fb.control(0, Validators.required),
       customerEmail: this.fb.control('', Validators.required),
       customerGender: this.fb.control('', Validators.required),
@@ -164,6 +167,10 @@ export class LoanFormComponent {
     ).get('customerQualification').value;
     this.cs.customerdetails.customerCibilScore =
       this.Empregister.get('customer').get('customerCibilScore').value;
+    // added for auto fill loan form sh
+    this.cs.customerdetails.annualIncome =
+      this.Empregister.get('customer').get('annualIncome').value;
+
     this.cs.customerdetails.customerLoanStatus =
       this.Empregister.get('customer').get('customerLoanStatus').value;
     //secondary Referece CustomerAddress POJO class

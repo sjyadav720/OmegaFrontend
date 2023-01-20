@@ -1,4 +1,4 @@
-
+<!--
 <body class="bg-light">
 
 
@@ -14,7 +14,7 @@
                   </mat-label>
                   <!-- Loan Amount -->
                   <!-- <div class="example-container"> -->
-                  <mat-form-field class="example-full-width w-100">
+                  <!-- <mat-form-field class="example-full-width w-100"> 
                     <mat-label>Loan Amount</mat-label>
                     <input matInput placeholder="amount" type="number" [(ngModel)]="value">
                   </mat-form-field>
@@ -23,14 +23,14 @@
                             <label id="example-name-label" class="example-name-label">Value</label>
                             <label class="example-value-label">{{value}}</label>
                           </div> -->
-                  <mat-slider color="accent" class="example-margin w-100" [disabled]="disabled" [max]="max" [min]="min"
+                  <!-- <mat-slider color="accent" class="example-margin w-100" [disabled]="disabled" [max]="max" [min]="min"
                     [step]="step" [discrete]="thumbLabel" [showTickMarks]="showTicks">
                     <input matSliderThumb [(ngModel)]="value">
-                  </mat-slider>
+                  </mat-slider> -->
             
   
                   <!-- Tenure(Years) -->
-                  <mat-form-field class="example-full-width w-100">
+                  <!-- <mat-form-field class="example-full-width w-100">
                     <mat-label>Tenure(Years)</mat-label>
                     <input matInput placeholder="amount" type="number" [(ngModel)]="year">
                   </mat-form-field>
@@ -38,25 +38,25 @@
                   <mat-slider color="accent" class="example-margin w-100" [disabled]="disabled1" [max]="max1" [min]="min1"
                     [step]="step1" [discrete]="thumbLabel" [showTickMarks]="showTicks">
                     <input matSliderThumb [(ngModel)]="year">
-                  </mat-slider>
+                  </mat-slider> -->
                   <!-- InterestRate -->
-                  <mat-form-field class="example-full-width w-100">
+                  <!-- <mat-form-field class="example-full-width w-100">
                     <mat-label>Inerest Rate(%P.A.)</mat-label>
                     <input matInput placeholder="amount" type="number" [(ngModel)]="interestrate">
                   </mat-form-field>
                   <mat-slider color="accent" class="example-margin w-100" [disabled]="disabled3" [max]="max3" [min]="min3"
                     [step]="step3" [discrete]="thumbLabel" [showTickMarks]="showTicks">
                     <input matSliderThumb [(ngModel)]="interestrate">
-                  </mat-slider>
+                  </mat-slider> -->
 
   
-                </div>
+                <!-- </div>
                 <div>
                   <button mat-raised-button color="accent" (click)="btn()">Calculate</button>
-                </div>
+                </div> -->
   
   
-              </mat-card-content>
+              <!-- </mat-card-content>
             </mat-card>
   
           </div>
@@ -86,9 +86,9 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td> -->
   
-                      <mat-label>Total Amount </mat-label>
+                      <!-- <mat-label>Total Amount </mat-label>
                     </td>
                     <td>
                       {{total| currency:"INR"}}
@@ -107,9 +107,112 @@
               </div>
               </mat-card-content>
             </mat-card>
-        </div>
+        </div> -->
 
+         
+        
+        
+
+        <div class="container">
+          <div class="spacer">
+            <div class="row">
+              <div class="col-lg-8  col-lg-offset-1">
+                <div class="well">
+        
+                  <div class="form-group">
+                    <div class="col-md-12">
+                      <span class="left-title">
+                        Home Loan Amount
+                      </span>
+                      <input type="text" style="width:44%;float:right;" class="form-control" (blur)="tbupdate(0)"
+                        [(ngModel)]="query.amount" placeholder="Loan Amount" name="pemi.highValue" />
+                    </div>
+                    <ng5-slider [(value)]="pemi.value" [options]="poptions" (userChangeEnd)="update()">
+                    </ng5-slider>
+                  </div>
+        
+                  <hr />
+        
+                  <div class="form-group">
+                    <div class="col-md-12">
+                      <span class="left-title">
+                        Interest Rate
+                      </span>
+                      <input type="text" style="width:44%;float:right;" class="form-control" (blur)="tbupdate(1)"
+                        [(ngModel)]="query.interest" placeholder="Interest Rate" name="remi.highValue" />
+                    </div>
+                    <ng5-slider [(value)]="remi.value" [options]="roptions" (userChangeEnd)="update()">
+                    </ng5-slider>
+                  </div>
+        
+                  <hr />
+        
+                  <div class="form-group">
+                    <div class="col-md-10">
+                      <span class="left-title">Loan Tenure</span>
+                      <input type="text" *ngIf="yrToggel" class="form-control" (blur)="tbupdate(2)"
+                        placeholder="Loan Tenure in Yr" [(ngModel)]="query.tenureYr" style="width:30%;float:right;">
+                      <input type="text" *ngIf="!yrToggel" class="form-control" (blur)="tbupdate(3)"
+                        placeholder="Loan Tenure in Mo" [(ngModel)]="query.tenureMo" style="width:30%;float:right;">
+                    </div>
+                    <div class="col-md-2">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" [ngClass]="{'active':yrToggel}"
+                          (click)="yrToggel=true;update()" type="button">Yr</button>
+                        <button class="btn btn-outline-secondary" [ngClass]="{'active':!yrToggel}"
+                          (click)="yrToggel=false;update()" type="button">Mo</button>
+                      </div>
+                    </div>
+                    <ng5-slider *ngIf="yrToggel" [(value)]="temi.value" [options]="toptions" (userChangeEnd)="update()">
+                    </ng5-slider>
+                    <ng5-slider *ngIf="!yrToggel" [(value)]="memi.value" [options]="moptions" (userChangeEnd)="update()">
+                    </ng5-slider>
+                  </div>
+        
+        
+                </div>
+        
+              </div>
+              <div class="col-lg-3">
+                <div class="well">
+        
+                  <div class="jusify-center">
+                    <h5>
+                      Loan EMI
+                    </h5>
+                    <span class="result">
+                      {{result.emi || "--"}}
+                    </span>
+                  </div>
+        
+                  <hr />
+        
+                  <div>
+                    <h5>
+                      Total Interest Payable
+                    </h5>
+                    <span class="result">
+                      {{result.interest || "--"}}
+                    </span>
+                  </div>
+        
+                  <hr />
+                  <div>
+                    <h5>
+                      Total Payment
+                    </h5>
+                    <h6>
+                      (Principal + Interest)
+                    </h6>
+                    <span class="result">
+                      {{result.total || "--"}}
+                    </span>
+                  </div>
+        
+        
+        
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-  </body>

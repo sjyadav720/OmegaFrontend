@@ -20,6 +20,7 @@ export class Customer {
     customerGender:string
     customerQualification:string;
     customerCibilScore:number;
+    annualIncome:number;//added for loan form auto fill sh
     customerLoanStatus:string;
 
 

@@ -28,6 +28,7 @@ export class CommonService {
     customerGender: '',
     customerQualification: '',
     customerCibilScore: 0,
+    annualIncome:0,
     customerLoanStatus: '',
     customerAddress: new CustomerAddress(),
     customerProfession: new Profession(),
@@ -36,6 +37,31 @@ export class CommonService {
     dealerBankDetails: new DealerBankDetails(),
     customerAllDocuments: new CustomerAllDocuments(),
   };
+
+
+  // customerdetails2: Customer = {
+  //   customerId: 0,
+  //   customerFirstName: '',
+  //   customerMiddleName: '',
+  //   customerLastName: '',
+  //   customerEmail: '',
+  //   customerMobileNumber: 0,
+  //   customerAlternateMobileNumber: 0,
+  //   customerPanCard: '',
+  //   customerAadharCard: 0,
+  //   customerDateOfBirth: '',
+  //   customerGender: '',
+  //   customerQualification: '',
+  //   customerCibilScore: 0,
+  //   annualIncome:0,
+  //   customerLoanStatus: '',
+  //   customerAddress: new CustomerAddress(),
+  //   customerProfession: new Profession(),
+  //   customerBankDetails: new CustomerBankDetails(),
+  //   vehicleDetails: new VehicleDetails(),
+  //   dealerBankDetails: new DealerBankDetails(),
+  //   customerAllDocuments: new CustomerAllDocuments(),
+  // };
 
   constructor(private http: HttpClient) {}
 
