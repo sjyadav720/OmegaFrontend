@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-
 import { Router } from '@angular/router';
-
 import { CommonService } from 'src/app/CommonServices/common.service';
 import { BaseResponse } from 'src/app/Models/base-response';
 import { EnquiryDetails } from 'src/app/Models/enquiry-details';

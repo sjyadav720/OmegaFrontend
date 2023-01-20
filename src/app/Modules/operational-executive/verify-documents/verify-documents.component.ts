@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./verify-documents.component.scss'],
 })
 export class VerifyDocumentsComponent {
+
+  isLinear = false;
+
   // ngAfterViewInit() {
   //   const viewer = new GcPdfViewer("#viewer", {
   //     workerSrc: "//node_modules/@grapecity/gcpdfviewer/gcpdfviewer.worker.js",

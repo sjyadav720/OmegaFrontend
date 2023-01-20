@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from 'src/app/CommonServices/common.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-loan-form',
@@ -8,7 +9,10 @@ import { CommonService } from 'src/app/CommonServices/common.service';
   styleUrls: ['./loan-form.component.scss'],
 })
 export class LoanFormComponent {
-  constructor(private fb: FormBuilder, private cs: CommonService) {}
+
+
+  constructor(private fb:FormBuilder, private cs: CommonService) {}
+
   ngOnInit() {
 
     
@@ -209,4 +213,13 @@ export class LoanFormComponent {
       console.log(d);
     });
   }
+  saveData(){
+    Swal.fire({
+    position: 'top',
+    icon: 'success',
+    title: 'Save Successfully!',
+    showConfirmButton: false,
+    timer: 5000,
+  })
+}
 }

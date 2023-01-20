@@ -20,8 +20,7 @@
     float: left;
 }
 
-.big 
-{
+.big {
     font-size: 30px;
     font-weight: 700;
     padding-bottom: 9px;
@@ -91,5 +90,9 @@ img {
 }
 
 [_nghost-hky-c158] .carousel-dots[_ngcontent-hky-c158] {
+    z-index: 0;
+}
+
+carousel {
     z-index: 0;
 }

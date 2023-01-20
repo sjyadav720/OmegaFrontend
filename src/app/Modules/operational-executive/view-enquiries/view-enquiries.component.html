@@ -1,1 +1,63 @@
 <p>view-enquiries works!</p>
+
+
+
+
+
+<table class="zigzag" border="1">
+    <thead>
+        <tr>
+            <th>FIRST NAME</th>
+            <th>MIDLLE NAME</th>
+            <th>LAST NAME</th>
+            <th>MOBILE NO.</th>
+            <th>PAN CARD NO.</th>
+            <th>ANNUAL INC</th>
+            <th>CIBIL Score</th>
+            <th>Enquiry Status</th>
+            <th>Documents</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let e of showDataOe">
+            <td>{{e.customerFirstName}}</td>
+            <td>{{e.customerMiddleName}}</td>
+            <td>{{e.customerLastName}}</td>
+            <td>{{e.customerMobileNumber}}</td>
+            <td>{{e.customerPanCard}}</td>
+            <td>{{e.annualIncome}}</td>
+            <td>{{e.cibilScore}}</td>
+            <td>{{e.enquiryStatus}}</td>
+            <td> <button (click)="goToVerifyDocuments(e)">Verify Documents</button></td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+<!-- <div class="div">
+
+    <table class="table" border="1">
+        <th>customerId</th>
+        <th>FirstName</th>
+        <th>lastName</th>
+        <th>age</th>
+        <th>email</th>
+        <th>mobileNo</th> -->
+
+
+<!-- 
+        <tr *ngFor="let x of enquiries">
+
+            <td> {{x.customerId}}</td>
+            <td> {{x.firstName}}</td>
+            <td> {{x.lastName}}</td>
+            <td> {{x.age}}</td>
+            <td> {{x.email}}</td>
+            <td> {{x.mobileNo}}</td>
+
+
+
+        </tr> -->
+<!-- </table> -->

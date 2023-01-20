@@ -1,1 +1,44 @@
 <p>verify-loan-form-documents works!</p>
+
+
+
+<table class="zigzag">
+    <thead>
+        <tr>
+            <th>FIRST NAME</th>
+            <th>MIDDLE NAME</th>
+            <th>LAST NAME</th>
+            <th>AGE</th>
+            <th>E-MAIL</th>
+            <th>MOBILE NO.</th>
+            <th> ANNUAL INC</th>
+            <th>CIBIL</th>
+            <th>Enquiry Status</th>
+            <th>Sanction Loan</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of showDataCm">
+            <td>{{r.customerFirstName}}</td>
+            <td>{{r.customerMiddleName}}</td>
+            <td>{{r.customerLastName}}</td>
+            <td>{{r.customerDateOfBirth}}</td>
+            <td>{{r.customerEmail}}</td>
+            <td>{{r.customerMobileNumber}}</td>
+            <td>{{r.annualIncome}}</td>
+            <td>{{r.cibilScore}}</td>
+            <td>{{r.enquiryStatus}}</td>
+            <td><button (click)="generatesanctionletter()">Create Sanction</button></td>
+            <!-- <td>{{e.customerId}}</td>
+            <td>{{e.firstName}}</td>
+            <td>{{e.lastName}}</td>
+            <td>{{e.age}}</td>
+            <td>{{e.email}}</td>
+            <td>{{e.mobileNo}}</td>
+            <td>{{e.pancardNo}}</td>
+            <td>{{e.annualIncome}}</td>
+            <td> <button (click)="chkCibil(e.customerId)">CheckCIBIL </button></td>
+            <td>{{e.enquiryStatus}}</td> -->
+        </tr>
+    </tbody>
+</table>
