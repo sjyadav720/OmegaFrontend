@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from 'src/app/CommonServices/common.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-loan-form',
@@ -9,26 +10,53 @@ import { CommonService } from 'src/app/CommonServices/common.service';
 })
 export class LoanFormComponent {
   constructor(private fb: FormBuilder, private cs: CommonService) {}
+
   ngOnInit() {}
 
   isLinear = true;
   Empregister = this.fb.group({
     //customer Details FormGroup Controls
     customer: this.fb.group({
-      customerId: this.fb.control(0, Validators.required),
-      customerFirstName: this.fb.control('', Validators.required),
-      customerMiddleName: this.fb.control('', Validators.required),
-      customerLastName: this.fb.control('', Validators.required),
-      customerPanCard: this.fb.control('', Validators.required),
-      customerAadharCard: this.fb.control(0, Validators.required),
-      customerDateOfBirth: this.fb.control('', Validators.required),
-      customerMobileNumber: this.fb.control(0, Validators.required),
+      customerId: this.fb.control(
+        this.cs.customerdetails.customerId,
+        Validators.required
+      ),
+      customerFirstName: this.fb.control(
+        this.cs.customerdetails.customerFirstName,
+        Validators.required
+      ),
+      customerMiddleName: this.fb.control(
+        this.cs.customerdetails.customerMiddleName,
+        Validators.required
+      ),
+      customerLastName: this.fb.control(
+        this.cs.customerdetails.customerLastName,
+        Validators.required
+      ),
+      customerPanCard: this.fb.control(
+        this.cs.customerdetails.customerPanCard,
+        Validators.required
+      ),
+      customerAadharCard: this.fb.control(
+        this.cs.customerdetails.customerAadharCard,
+        Validators.required
+      ),
+      customerDateOfBirth: this.fb.control(
+        this.cs.customerdetails.customerDateOfBirth,
+        Validators.required
+      ),
+      customerMobileNumber: this.fb.control(
+        this.cs.customerdetails.customerMobileNumber,
+        Validators.required
+      ),
       customerAlternateMobileNumber: this.fb.control(0, Validators.required),
       customerEmail: this.fb.control('', Validators.required),
       customerGender: this.fb.control('', Validators.required),
       customerQualification: this.fb.control('', Validators.required),
       customerCibilScore: this.fb.control(0, Validators.required),
+      annualIncome:this.fb.control(0, Validators.required),
       customerLoanStatus: this.fb.control('', Validators.required),
+      // annualIncome: this.fb.control(0, Validators.required),
     }),
     //Address Details FormGroup Controls
     customerAddress: this.fb.group({
@@ -61,6 +89,7 @@ export class LoanFormComponent {
     vehicleDetails: this.fb.group({
       customerVehicleId: this.fb.control(0, Validators.required),
       customerVehicleModel: this.fb.control('', Validators.required),
+      customerVehiclePrice: this.fb.control(0, Validators.required),
     }),
     //Delear Bank Details FormGroup Controls
 
@@ -131,7 +160,7 @@ export class LoanFormComponent {
   onselectfile6(event) {
     this.bankPassBook = event.target.files[0];
   }
-  Submit() {
+  submit() {
     //Assigning value into Customer POJO class
     this.cs.customerdetails.customerId =
       this.Empregister.get('customer').get('customerId').value;
@@ -164,6 +193,10 @@ export class LoanFormComponent {
     ).get('customerQualification').value;
     this.cs.customerdetails.customerCibilScore =
       this.Empregister.get('customer').get('customerCibilScore').value;
+    // added for auto fill loan form sh
+    this.cs.customerdetails.annualIncome =
+      this.Empregister.get('customer').get('annualIncome').value;
+
     this.cs.customerdetails.customerLoanStatus =
       this.Empregister.get('customer').get('customerLoanStatus').value;
     //secondary Referece CustomerAddress POJO class
@@ -202,4 +235,13 @@ export class LoanFormComponent {
       console.log(d);
     });
   }
+  // saveData() {
+  //   Swal.fire({
+  //     position: 'top',
+  //     icon: 'success',
+  //     title: 'Save Successfully!',
+  //     showConfirmButton: false,
+  //     timer: 5000,
+  //   });
+  // }
 }

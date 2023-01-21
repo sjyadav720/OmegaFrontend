@@ -38,6 +38,7 @@ import { TeleCallerModule } from './Modules/tele-caller/tele-caller.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { Ng5SliderModule } from 'ng5-slider';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     MatSliderModule,
     HttpClientModule,
     IvyCarouselModule,
+    Ng5SliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

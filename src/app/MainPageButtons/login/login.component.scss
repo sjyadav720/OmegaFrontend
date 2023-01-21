@@ -168,3 +168,49 @@ body {
         bottom: 100%;
     }
 }
+
+// last login form simple
+.loginone {
+    margin: 0 10%;
+    // background-image: url("../../../assets/pictures/header/bg94.jpg");
+    // bac
+}
+
+.form {
+    padding: 0em 10em 16em 7em;
+    resize: both;
+    overflow: auto;
+}
+
+.example-full-width {
+    width: 100%;
+    float: right;
+}
+
+.container1 {
+    width: 50%;
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container2 {
+    width: 40%;
+    float: left;
+    margin-left: 10%;
+    // height: 400em;
+}
+
+.container3 {
+    margin-top: 5%;
+}
+
+.my-3 {
+    margin: 0;
+    color: rgb(48, 63, 159);
+    font-weight: 700;
+    font-size: 35px;
+}
+
+.mr {
+    margin-right: 20px;
+}

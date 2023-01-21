@@ -48,8 +48,44 @@
     </div>
 </div> -->
 
+<!-- login form   -->
+
+<div class="loginone">
+    <div>
+        <mat-card-content>
+            <h1 class="text-center my-3">Login</h1>
+        </mat-card-content>
+    </div>
+    <div class="container1">
+        <mat-card>
+            <form [formGroup]="loginForm" (ngSubmit)="gotoDash()">
+                <div class="container">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Username</mat-label>
+                        <input matInput placeholder="Enter Here..." formControlName="userName">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Enter Here..." formControlName="password">
+                    </mat-form-field>
+                    <div class="container3">
+                        <div class="p-2 text-center ">
+                            <button mat-raised-button color="accent" class="mr" type="submit">Login</button>
+                            <button mat-raised-button color="primary" class="mr-20" type="reset">Reset</button> &nbsp;
+                        </div>
+                    </div>
+                </div>
+            </form>
 
 
+        </mat-card>
+    </div>
+
+    <div class="container2">
+        <img src="../../../assets/pictures/header/signup1-image.jpg" class="img-fluid " alt="Sample image ">
+    </div>
+</div>
+<!-- -----------
 <div class="login-box">
 
     <h2>Login</h2>
@@ -79,4 +115,4 @@
             <button class="ml10" mat-raised-button color="accent" type="reset">Reset</button>
         </a>
     </form>
-</div>
+</div> -->

@@ -21,12 +21,12 @@
 
         <tr *ngFor="let e of enqData ">
             <td>{{e.customerId}}</td>
-            <td>{{e.firstName}}</td>
-            <td>{{e.lastName}}</td>
-            <td>{{e.age}}</td>
-            <td>{{e.email}}</td>
-            <td>{{e.mobileNo}}</td>
-            <td>{{e.pancardNo}}</td>
+            <td>{{e.customerFirstName}}</td>
+            <td>{{e.customerLastName}}</td>
+            <td>{{e.customerDateOfBirth}}</td>
+            <td>{{e.customerEmail}}</td>
+            <td>{{e.customerMobileNumber}}</td>
+            <td>{{e.customerPanCard}}</td>
             <td>{{e.annualIncome}}</td>
 
             <td> <button (click)="chkCibil(e.customerId)">CheckCIBIL </button></td>
