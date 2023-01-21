@@ -8,10 +8,10 @@
         <mat-card>
             <form [formGroup]="enqForm" (ngSubmit)="sendData()">
                 <div class="container">
-                    <!-- <mat-form-field class="example-full-width">
-            <mat-label>Customer Id</mat-label>
-            <input matInput placeholder="Enter Here..." formControlName="customerId" type="number" >
-        </mat-form-field> -->
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Customer Id</mat-label>
+                        <input matInput placeholder="Enter Here..." formControlName="customerId" type="number">
+                    </mat-form-field>
                     <mat-form-field class="example-full-width">
                         <mat-label>First Name</mat-label>
                         <input matInput placeholder="Enter Here..." formControlName="customerFirstName">

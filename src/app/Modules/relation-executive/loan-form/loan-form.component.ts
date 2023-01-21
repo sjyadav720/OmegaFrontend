@@ -54,8 +54,9 @@ export class LoanFormComponent {
       customerGender: this.fb.control('', Validators.required),
       customerQualification: this.fb.control('', Validators.required),
       customerCibilScore: this.fb.control(0, Validators.required),
+      annualIncome:this.fb.control(0, Validators.required),
       customerLoanStatus: this.fb.control('', Validators.required),
-      annualIncome: this.fb.control(0, Validators.required),
+      // annualIncome: this.fb.control(0, Validators.required),
     }),
     //Address Details FormGroup Controls
     customerAddress: this.fb.group({
@@ -159,7 +160,7 @@ export class LoanFormComponent {
   onselectfile6(event) {
     this.bankPassBook = event.target.files[0];
   }
-  Submit() {
+  submit() {
     //Assigning value into Customer POJO class
     this.cs.customerdetails.customerId =
       this.Empregister.get('customer').get('customerId').value;

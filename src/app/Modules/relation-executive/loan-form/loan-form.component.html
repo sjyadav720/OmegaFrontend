@@ -5,7 +5,7 @@
     </mat-card-content>
 
     <!-- MultiPartForm GroupName customerInfo MasterGroup-->
-    <form [formGroup]="Empregister" (ngSubmit)="Submit()">
+    <form [formGroup]="Empregister" (ngSubmit)="submit()">
         <!-- formsteps horizontal -->
         <mat-stepper [linear]="isLinear" #stepper>
             <!-- FormStep First Start-->
@@ -15,10 +15,10 @@
                     <!-- MultiPartForm Step 1 Heading -->
                     <ng-template matStepLabel>Customer Details</ng-template>
                     <!-- customerId -->
-                    <!-- <mat-form-field appearance="fill">
-              <mat-label>Customer Id</mat-label>
-              <input matInput formControlName="customerId" placeholder="Enter Here..." type="number">
-            </mat-form-field> -->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Customer Id</mat-label>
+                        <input matInput formControlName="customerId" placeholder="Enter Here..." type="number">
+                    </mat-form-field>
                     <!-- customerFirstName  -->
                     <mat-form-field appearance="fill">
                         <mat-label>Customer First Name</mat-label>
@@ -238,9 +238,9 @@
                         <mat-label>Model</mat-label>
                         <input matInput formControlName="customerVehicleModel" placeholder="Vehicle Model">
                     </mat-form-field>
-                     <!-- customerVehiclePrice -->
-                     <mat-form-field appearance="fill">
-                        <mat-label>Model</mat-label>
+                    <!-- customerVehiclePrice -->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Price</mat-label>
                         <input matInput formControlName="customerVehiclePrice" placeholder="Vehicle Price">
                     </mat-form-field>
                     <div>
@@ -353,15 +353,15 @@
                     </mat-list-item>
                     <mat-list-item> <strong>CibilScore:</strong> {{ this.Empregister.value.customer.customerCibilScore }}
                     </mat-list-item>
-                    <mat-list-item> <strong>Loan Status:</strong> {{ this.Empregister.value.customer.customerLoanStatus
-                    }}</mat-list-item>
-                    <mat-list-item> <strong>Annual Income:</strong> {{ this.Empregister.value.customer
-                    }}</mat-list-item>
+                    <mat-list-item> <strong>Loan Status:</strong> {{ this.Empregister.value.customer.customerLoanStatus }}
+                    </mat-list-item>
+                    <mat-list-item> <strong>Annual Income:</strong> {{ this.Empregister.value.customer.annualIncome }}
+                    </mat-list-item>
                 </mat-list>
                 <br><br><br>
                 <div>
                     <button mat-raised-button color="primary" matStepperPrevious type="button">Back</button> &nbsp;
-                    <button mat-raised-button color="primary" type="submit" (click)="Submit()">Save</button>
+                    <button mat-raised-button color="primary" type="submit" (click)="submit()">Save</button>
                     <!-- <input type="submit" mat-raised-button color="accent"  value="Submit"> -->
 
                 </div>
