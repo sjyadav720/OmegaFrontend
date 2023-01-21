@@ -16,7 +16,7 @@ export class Customer {
     customerAlternateMobileNumber:number
     customerPanCard:string;
     customerAadharCard:number;
-    customerDateOfBirth:string;
+    customerLoanFormFillDate:string;
     customerGender:string
     customerQualification:string;
     customerCibilScore:number;

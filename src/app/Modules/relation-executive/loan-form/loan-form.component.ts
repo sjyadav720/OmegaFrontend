@@ -154,7 +154,7 @@ export class LoanFormComponent {
       this.Empregister.get('customer').get('customerPanCard').value;
     this.cs.customerdetails.customerAadharCard =
       this.Empregister.get('customer').get('customerAadharCard').value;
-    this.cs.customerdetails.customerDateOfBirth = this.Empregister.get(
+    this.cs.customerdetails.customerLoanFormFillDate = this.Empregister.get(
       'customer'
     ).get('customerDateOfBirth').value;
     this.cs.customerdetails.customerGender =
