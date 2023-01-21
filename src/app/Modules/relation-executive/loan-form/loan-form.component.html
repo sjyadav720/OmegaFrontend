@@ -238,6 +238,11 @@
                         <mat-label>Model</mat-label>
                         <input matInput formControlName="customerVehicleModel" placeholder="Vehicle Model">
                     </mat-form-field>
+                     <!-- customerVehiclePrice -->
+                     <mat-form-field appearance="fill">
+                        <mat-label>Model</mat-label>
+                        <input matInput formControlName="customerVehiclePrice" placeholder="Vehicle Price">
+                    </mat-form-field>
                     <div>
                         <button mat-button matStepperPrevious>Back</button> &nbsp;
                         <button mat-raised-button color="accent" matStepperNext type="button">Next</button>
@@ -348,13 +353,15 @@
                     </mat-list-item>
                     <mat-list-item> <strong>CibilScore:</strong> {{ this.Empregister.value.customer.customerCibilScore }}
                     </mat-list-item>
-                    <!-- <mat-list-item> <strong>Loan Status:</strong> {{ this.Empregister.value.customer.customerLoanStatus
-                    }}</mat-list-item> -->
+                    <mat-list-item> <strong>Loan Status:</strong> {{ this.Empregister.value.customer.customerLoanStatus
+                    }}</mat-list-item>
+                    <mat-list-item> <strong>Annual Income:</strong> {{ this.Empregister.value.customer
+                    }}</mat-list-item>
                 </mat-list>
                 <br><br><br>
                 <div>
                     <button mat-raised-button color="primary" matStepperPrevious type="button">Back</button> &nbsp;
-                    <button mat-raised-button color="primary" type="submit" (click)="saveData()">Save</button>
+                    <button mat-raised-button color="primary" type="submit" (click)="Submit()">Save</button>
                     <!-- <input type="submit" mat-raised-button color="accent"  value="Submit"> -->
 
                 </div>

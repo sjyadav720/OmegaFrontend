@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatCardModule} from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const oeRouting: Routes = [
   {
@@ -28,7 +29,10 @@ const oeRouting: Routes = [
     MatListModule,
     MatRadioModule,
     MatStepperModule,
-    MatCardModule],
+    MatCardModule,
+  ReactiveFormsModule
+  ],
+    
   exports: [ViewEnquiriesComponent, VerifyDocumentsComponent],
 })
 export class OperationalExecutiveModule {}

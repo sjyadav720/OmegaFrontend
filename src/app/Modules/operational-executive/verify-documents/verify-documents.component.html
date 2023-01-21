@@ -1,15 +1,13 @@
-<p>verify-documents works!</p>
-
+<!-- Kunal Jadhav Start -->
 <mat-card>
     <mat-card-content class="text-center">
-        <h1>CUSTOMER ALL DATA & VERIFY DOCUMENTS</h1>
+        <h1>CUSTOMER LOAN APPLICATION FORM</h1>
     </mat-card-content>
 
     <!-- MultiPartForm GroupName customerInfo MasterGroup-->
-    <!-- <form [formGroup]="Empregister" (ngSubmit)="Submit()"> -->
-    <form>
+    <form [formGroup]="Empregister" (ngSubmit)="Submit()">
         <!-- formsteps horizontal -->
-        <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+        <mat-stepper [linear]="isLinear" #stepper>
             <!-- FormStep First Start-->
             <mat-step>
                 <!-- MultiPartForm FormGroupName customerInfo (firstGroup) -->
@@ -17,10 +15,10 @@
                     <!-- MultiPartForm Step 1 Heading -->
                     <ng-template matStepLabel>Customer Details</ng-template>
                     <!-- customerId -->
-                    <mat-form-field appearance="fill">
-                        <mat-label>Customer Id</mat-label>
-                        <input matInput formControlName="customerId" placeholder="Enter Here..." type="number">
-                    </mat-form-field>
+                    <!-- <mat-form-field appearance="fill">
+              <mat-label>Customer Id</mat-label>
+              <input matInput formControlName="customerId" placeholder="Enter Here..." type="number">
+            </mat-form-field> -->
                     <!-- customerFirstName  -->
                     <mat-form-field appearance="fill">
                         <mat-label>Customer First Name</mat-label>
@@ -85,6 +83,13 @@
                         <mat-label>CIBIL score</mat-label>
                         <input matInput formControlName="customerCibilScore" required placeholder="Enter Here...">
                     </mat-form-field>
+                    <!-- customerLoanStatus -->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Annual Income</mat-label>
+                        <input matInput formControlName="annualIncome" required placeholder="Enter Here...">
+                    </mat-form-field>
+
+
                     <!-- customerLoanStatus -->
                     <mat-form-field appearance="fill">
                         <mat-label>Loan Status</mat-label>
@@ -233,6 +238,11 @@
                         <mat-label>Model</mat-label>
                         <input matInput formControlName="customerVehicleModel" placeholder="Vehicle Model">
                     </mat-form-field>
+                     <!-- customerVehiclePrice -->
+                     <mat-form-field appearance="fill">
+                        <mat-label>Model</mat-label>
+                        <input matInput formControlName="customerVehiclePrice" placeholder="Vehicle Price">
+                    </mat-form-field>
                     <div>
                         <button mat-button matStepperPrevious>Back</button> &nbsp;
                         <button mat-raised-button color="accent" matStepperNext type="button">Next</button>
@@ -285,13 +295,13 @@
             </mat-step>
             <!-- step 7 -->
             <mat-step label="Documents Details">
-                <div formGroupName="allDocuments">
+                <!-- <div formGroupName="allDocuments"> -->
 
-                    <!-- <div class="mb-3">
+                <div class="mb-3">
                     <label for="exampleInputName">PanCard</label>
                     <input type="file" (change)="onselectfile1($event)">
-                </div> -->
-                    <!-- <div class="mb-3">
+                </div>
+                <div class="mb-3">
                     <label for="exampleInputName">Income Proof</label>
                     <input type="file" (change)="onselectfile2($event)">
                 </div>
@@ -316,12 +326,12 @@
                     <button mat-raised-button color="primary" matStepperPrevious type="button">Back</button>
                     <button mat-raised-button color="accent" matStepperNext type="button">Next</button>
                 </div>
-                <!-</div> -->
-                    <!-- </mat-step> -->
-                    <!-- AllDetails -->
-                    <mat-step label="ALL Details"> -->
+                <!-- </div> -->
+            </mat-step>
+            <!-- AllDetails -->
+            <mat-step label="ALL Details">
 
-                        <!-- <mat-list>
+                <mat-list>
                     <mat-list-item> <strong>First Name:</strong> {{ this.Empregister.value.customer.customerFirstName }}
                     </mat-list-item>
                     <mat-list-item> <strong>Middle Name:</strong> {{ this.Empregister.value.customer.customerMiddleName }}
@@ -342,20 +352,21 @@
                     <mat-list-item> <strong>Qualification:</strong> {{ this.Empregister.value.customer.customerQualification }}
                     </mat-list-item>
                     <mat-list-item> <strong>CibilScore:</strong> {{ this.Empregister.value.customer.customerCibilScore }}
-                    </mat-list-item> -->
-                        <!-- <mat-list-item> <strong>Loan Status:</strong> {{ this.Empregister.value.customer.customerLoanStatus
+                    </mat-list-item>
+                    <!-- <mat-list-item> <strong>Loan Status:</strong> {{ this.Empregister.value.customer.customerLoanStatus
                     }}</mat-list-item> -->
-                        <!-- </mat-list> -->
-                        <br><br><br>
-                        <div>
-                            <button mat-raised-button color="primary" matStepperPrevious type="button">Back</button> &nbsp;
-                            <button mat-raised-button color="primary" type="submit">Save</button>
-                            <!-- <input type="submit" mat-raised-button color="accent"  value="Submit"> -->
+                </mat-list>
+                <br><br><br>
+                <div>
+                    <button mat-raised-button color="primary" matStepperPrevious type="button">Back</button> &nbsp;
+                    <button mat-raised-button color="primary" type="submit" (click)="saveData()">Save</button>
+                    <!-- <input type="submit" mat-raised-button color="accent"  value="Submit"> -->
 
-                        </div>
-                    </mat-step>
                 </div>
             </mat-step>
+
         </mat-stepper>
     </form>
 </mat-card>
+
+<!-- Kunal Jadhav End -->
