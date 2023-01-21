@@ -2,15 +2,15 @@ export class EnquiryDetails {
 
 
     customerId:number
-	firstName:String
-	lastName:String
-	age:number
+	customerFirstName:String
+	customerLastName:String
+	customerLoanFormFillDate:string
 	email:string
 	mobileNo:number
 	pancardNo:String
-     enquiryStatus:string
-	 annualIncome:number
-	 
+	status:string
+	annualIncome:number
+	customerCibilScore:number;
 
 
 }

@@ -21,7 +21,7 @@ export class Customer {
     customerQualification:string;
     customerCibilScore:number;
     annualIncome:number;//added for loan form auto fill sh
-    customerLoanStatus:string;
+    status:string;
 
 
     customerAddress:CustomerAddress;

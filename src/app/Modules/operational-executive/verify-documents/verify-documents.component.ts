@@ -43,7 +43,7 @@ export class VerifyDocumentsComponent {
         Validators.required
       ),
       customerDateOfBirth: this.fb.control(
-        this.cs.customerdetails.customerDateOfBirth,
+        this.cs.customerdetails.customerLoanFormFillDate,
         Validators.required
       ),
       customerMobileNumber: this.fb.control(
@@ -55,7 +55,7 @@ export class VerifyDocumentsComponent {
       customerGender: this.fb.control(this.cs.customerdetails.customerGender, Validators.required),
       customerQualification: this.fb.control('', Validators.required),
       customerCibilScore: this.fb.control(this.cs.customerdetails.customerCibilScore, Validators.required),
-      customerLoanStatus: this.fb.control(this.cs.customerdetails.customerLoanStatus, Validators.required),
+      status: this.fb.control(this.cs.customerdetails.status, Validators.required),
     }),
     //Address Details FormGroup Controls
     customerAddress: this.fb.group({
@@ -182,7 +182,7 @@ export class VerifyDocumentsComponent {
       this.Empregister.get('customer').get('customerPanCard').value;
     this.cs.customerdetails.customerAadharCard =
       this.Empregister.get('customer').get('customerAadharCard').value;
-    this.cs.customerdetails.customerDateOfBirth = this.Empregister.get(
+    this.cs.customerdetails.customerLoanFormFillDate = this.Empregister.get(
       'customer'
     ).get('customerDateOfBirth').value;
     this.cs.customerdetails.customerGender =
@@ -196,8 +196,8 @@ export class VerifyDocumentsComponent {
     this.cs.customerdetails.annualIncome =
       this.Empregister.get('customer').get('annualIncome').value;
 
-    this.cs.customerdetails.customerLoanStatus =
-      this.Empregister.get('customer').get('customerLoanStatus').value;
+    this.cs.customerdetails.status =
+      this.Empregister.get('customer').get('status').value;
     //secondary Referece CustomerAddress POJO class
     this.cs.customerdetails.customerAddress =
       this.Empregister.get('customerAddress').value;

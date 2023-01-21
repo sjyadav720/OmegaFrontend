@@ -24,12 +24,12 @@ export class CommonService {
     customerAlternateMobileNumber: 0,
     customerPanCard: '',
     customerAadharCard: 0,
-    customerDateOfBirth: '',
+    customerLoanFormFillDate: '',
     customerGender: '',
     customerQualification: '',
     customerCibilScore: 0,
     annualIncome:0,
-    customerLoanStatus: '',
+    status: '',
     customerAddress: new CustomerAddress(),
     customerProfession: new Profession(),
     customerBankDetails: new CustomerBankDetails(),
@@ -95,8 +95,7 @@ export class CommonService {
 
   saveLoanApplicationFormData(data: any) {
     return this.http.post(
-      'http://localhost:9999/customer/saveCustomerDetails',
-      data
+      'http://localhost:9999/customer/saveCustomerDetails',data
     );
   }
 }

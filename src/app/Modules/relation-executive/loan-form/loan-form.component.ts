@@ -41,8 +41,8 @@ export class LoanFormComponent {
         this.cs.customerdetails.customerAadharCard,
         Validators.required
       ),
-      customerDateOfBirth: this.fb.control(
-        this.cs.customerdetails.customerDateOfBirth,
+      customerLoanFormFillDate: this.fb.control(
+        this.cs.customerdetails.customerLoanFormFillDate,
         Validators.required
       ),
       customerMobileNumber: this.fb.control(
@@ -55,7 +55,7 @@ export class LoanFormComponent {
       customerQualification: this.fb.control('', Validators.required),
       customerCibilScore: this.fb.control(0, Validators.required),
       annualIncome:this.fb.control(0, Validators.required),
-      customerLoanStatus: this.fb.control('', Validators.required),
+      status: this.fb.control('', Validators.required),
       // annualIncome: this.fb.control(0, Validators.required),
     }),
     //Address Details FormGroup Controls
@@ -106,7 +106,7 @@ export class LoanFormComponent {
     PersonalDocs: this.fb.group({
       documentId: this.fb.control(0, Validators.required),
       addressProof: this.fb.control('', Validators.required),
-      pancard: this.fb.control('', Validators.required),
+      panCard: this.fb.control('', Validators.required),
       IncomeTax: this.fb.control('', Validators.required),
       aadharCard: this.fb.control('', Validators.required),
       photo: this.fb.control('', Validators.required),
@@ -183,9 +183,7 @@ export class LoanFormComponent {
       this.Empregister.get('customer').get('customerPanCard').value;
     this.cs.customerdetails.customerAadharCard =
       this.Empregister.get('customer').get('customerAadharCard').value;
-    this.cs.customerdetails.customerLoanFormFillDate = this.Empregister.get(
-      'customer'
-    ).get('customerDateOfBirth').value;
+    this.cs.customerdetails.customerLoanFormFillDate = this.Empregister.get('customer').get('customerLoanFormFillDate').value;
     this.cs.customerdetails.customerGender =
       this.Empregister.get('customer').get('customerGender').value;
     this.cs.customerdetails.customerQualification = this.Empregister.get(
@@ -197,8 +195,8 @@ export class LoanFormComponent {
     this.cs.customerdetails.annualIncome =
       this.Empregister.get('customer').get('annualIncome').value;
 
-    this.cs.customerdetails.customerLoanStatus =
-      this.Empregister.get('customer').get('customerLoanStatus').value;
+    this.cs.customerdetails.status =
+      this.Empregister.get('customer').get('status').value;
     //secondary Referece CustomerAddress POJO class
     this.cs.customerdetails.customerAddress =
       this.Empregister.get('customerAddress').value;
@@ -223,14 +221,16 @@ export class LoanFormComponent {
     let allData = JSON.stringify(this.cs.customerdetails);
 
     data.append('allData', allData);
-    data.append('panCard', this.panCard);
+    
     data.append('incomeProof', this.incomeProof);
+    
     data.append('adhaarCard', this.adhaarCard);
+    data.append('panCard', this.panCard);
     data.append('photo', this.photo);
     data.append('signature', this.signature);
     data.append('bankPassBook', this.bankPassBook);
 
-    console.log(data);
+    //console.log(data);
     this.cs.saveLoanApplicationFormData(data).subscribe((d: any) => {
       console.log(d);
     });

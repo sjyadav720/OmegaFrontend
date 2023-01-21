@@ -1,6 +1,6 @@
 export class CustomerAllDocuments {
     documentId:number;
-    panCard:[];
+    panCard:any[];
     incomeProof:any[];
     aadharCard:any[];
     photo:any[];

@@ -5,7 +5,8 @@
     </mat-card-content>
 
     <!-- MultiPartForm GroupName customerInfo MasterGroup-->
-    <form [formGroup]="Empregister" (ngSubmit)="submit()">
+    <!-- (ngSubmit)="submit()" -->
+    <form [formGroup]="Empregister" >  
         <!-- formsteps horizontal -->
         <mat-stepper [linear]="isLinear" #stepper>
             <!-- FormStep First Start-->
@@ -60,10 +61,10 @@
                         <mat-label>Customer Aadhar Card</mat-label>
                         <input matInput formControlName="customerAadharCard" placeholder="Enter Here..." type="number">
                     </mat-form-field>
-                    <!-- customerDateOfBirth -->
+                    <!-- customerLoanFormFillDate -->
                     <mat-form-field appearance="fill">
-                        <mat-label>Customer Date Of Birth</mat-label>
-                        <input matInput formControlName="customerDateOfBirth" placeholder="Enter Here...">
+                        <mat-label>customerLoanFormFillDate</mat-label>
+                        <input matInput formControlName="customerLoanFormFillDate" placeholder="customerLoanFormFillDate">
                     </mat-form-field>
 
                     <!-- gender -->
@@ -92,8 +93,8 @@
 
                     <!-- customerLoanStatus -->
                     <mat-form-field appearance="fill">
-                        <mat-label>Loan Status</mat-label>
-                        <input matInput formControlName="customerLoanStatus" required placeholder="Enter Here...">
+                        <mat-label>Status</mat-label>
+                        <input matInput formControlName="status" required placeholder="Enter Here...">
                     </mat-form-field>
                     <!-- Next Button -->
                     <div>
@@ -299,7 +300,7 @@
 
                 <div class="mb-3">
                     <label for="exampleInputName">PanCard</label>
-                    <input type="file" (change)="onselectfile1($event)">
+                    <input type="file" (change)="onselectfile1($event)">    
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputName">Income Proof</label>
@@ -341,11 +342,11 @@
                     <mat-list-item> <strong>Mobile Name:</strong> {{ this.Empregister.value.customer.customerMobileNumber }}
                     </mat-list-item>
                     <mat-list-item> <strong>Alternate Mobile Name:</strong> {{ this.Empregister.value.customer.customerAlternateMobileNumber }}</mat-list-item>
-                    <mat-list-item> <strong>Pancard Name:</strong> {{ this.Empregister.value.customer.customerPanCard }}
+                    <mat-list-item> <strong>Pancard No:</strong> {{ this.Empregister.value.customer.customerPanCard }}
                     </mat-list-item>
                     <mat-list-item> <strong>AadharCard :</strong> {{ this.Empregister.value.customer.customerAadharCard }}
                     </mat-list-item>
-                    <mat-list-item> <strong>DateOfBirth:</strong> {{ this.Empregister.value.customer.customerDateOfBirth }}
+                    <mat-list-item> <strong>DateOfBirth:</strong> {{ this.Empregister.value.customer.customerLoanFormFillDate }}
                     </mat-list-item>
                     <mat-list-item> <strong>Email :</strong> {{ this.Empregister.value.customer.customerEmail }}
                     </mat-list-item>
@@ -353,7 +354,7 @@
                     </mat-list-item>
                     <mat-list-item> <strong>CibilScore:</strong> {{ this.Empregister.value.customer.customerCibilScore }}
                     </mat-list-item>
-                    <mat-list-item> <strong>Loan Status:</strong> {{ this.Empregister.value.customer.customerLoanStatus }}
+                    <mat-list-item> <strong>Loan Status:</strong> {{ this.Empregister.value.customer.status }}
                     </mat-list-item>
                     <mat-list-item> <strong>Annual Income:</strong> {{ this.Empregister.value.customer.annualIncome }}
                     </mat-list-item>

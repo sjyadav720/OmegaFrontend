@@ -25,11 +25,11 @@ export class EnquiryFormComponent implements OnInit {
       customerFirstName: [''],
       customerMiddleName: [''],
       customerLastName: [''],
-      customerDateOfBirth: [0],
+      customerLoanFormFillDate: [''],
       customerEmail: [''],
       customerMobileNumber: [0, Validators.required],
       customerPanCard: ['', Validators.required],
-      enquiryStatus: [''],
+      status: [''],
       annualIncome: [0, Validators.required],
     });
   }
