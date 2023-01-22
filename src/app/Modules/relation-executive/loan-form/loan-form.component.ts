@@ -54,7 +54,7 @@ export class LoanFormComponent {
       customerGender: this.fb.control('', Validators.required),
       customerQualification: this.fb.control('', Validators.required),
       customerCibilScore: this.fb.control(0, Validators.required),
-      annualIncome:this.fb.control(0, Validators.required),
+      annualIncome: this.fb.control(0, Validators.required),
       status: this.fb.control('', Validators.required),
       // annualIncome: this.fb.control(0, Validators.required),
     }),
@@ -103,14 +103,14 @@ export class LoanFormComponent {
       dealerBankIfscNumber: this.fb.control('', Validators.required),
     }),
 
-    PersonalDocs: this.fb.group({
-      documentId: this.fb.control(0, Validators.required),
-      addressProof: this.fb.control('', Validators.required),
+    customerAllDocuments: this.fb.group({
+      // documentID: this.fb.control(0, Validators.required),
       panCard: this.fb.control('', Validators.required),
-      IncomeTax: this.fb.control('', Validators.required),
-      aadharCard: this.fb.control('', Validators.required),
+      incomeProof: this.fb.control('', Validators.required),
+      adhaarCard: this.fb.control('', Validators.required),
       photo: this.fb.control('', Validators.required),
       signature: this.fb.control('', Validators.required),
+      bankPassBook: this.fb.control('', Validators.required),
     }),
   });
   professionId: string;
@@ -135,7 +135,11 @@ export class LoanFormComponent {
   get dealerBankDetails() {
     return this.Empregister.get('dealerBankDetails') as FormGroup;
   }
-
+  //added now shubham 22/01/2023
+  get customerAllDocuments() {
+    return this.Empregister.get('customerAllDocuments') as FormGroup;
+  }
+  documentID: number;
   panCard: any;
   incomeProof: any;
   photo: any;
@@ -145,20 +149,20 @@ export class LoanFormComponent {
   onselectfile1(event) {
     this.panCard = event.target.files[0];
   }
-  onselectfile2(event) {
-    this.incomeProof = event.target.files[0];
+  onselectfile2(event2) {
+    this.incomeProof = event2.target.files[0];
   }
-  onselectfile3(event) {
-    this.photo = event.target.files[0];
+  onselectfile3(event3) {
+    this.photo = event3.target.files[0];
   }
-  onselectfile4(event) {
-    this.adhaarCard = event.target.files[0];
+  onselectfile4(event4) {
+    this.adhaarCard = event4.target.files[0];
   }
-  onselectfile5(event) {
-    this.signature = event.target.files[0];
+  onselectfile5(event5) {
+    this.signature = event5.target.files[0];
   }
-  onselectfile6(event) {
-    this.bankPassBook = event.target.files[0];
+  onselectfile6(event6) {
+    this.bankPassBook = event6.target.files[0];
   }
   submit() {
     //Assigning value into Customer POJO class
@@ -183,7 +187,9 @@ export class LoanFormComponent {
       this.Empregister.get('customer').get('customerPanCard').value;
     this.cs.customerdetails.customerAadharCard =
       this.Empregister.get('customer').get('customerAadharCard').value;
-    this.cs.customerdetails.customerLoanFormFillDate = this.Empregister.get('customer').get('customerLoanFormFillDate').value;
+    this.cs.customerdetails.customerLoanFormFillDate = this.Empregister.get(
+      'customer'
+    ).get('customerLoanFormFillDate').value;
     this.cs.customerdetails.customerGender =
       this.Empregister.get('customer').get('customerGender').value;
     this.cs.customerdetails.customerQualification = this.Empregister.get(
@@ -214,21 +220,24 @@ export class LoanFormComponent {
     this.cs.customerdetails.dealerBankDetails =
       this.Empregister.get('dealerBankDetails').value;
 
+    //shubham 22.01.2023
+    this.cs.customerdetails.customerAllDocuments = this.Empregister.get(
+      'customerAllDocuments'
+    ).value;
+
     console.log(this.cs.customerdetails);
 
     let data = new FormData();
 
     let allData = JSON.stringify(this.cs.customerdetails);
 
-    data.append('allData', allData);
-    
-    data.append('incomeProof', this.incomeProof);
-    
-    data.append('adhaarCard', this.adhaarCard);
     data.append('panCard', this.panCard);
+    data.append('adhaarCard', this.adhaarCard);
+    data.append('incomeProof', this.incomeProof);
     data.append('photo', this.photo);
     data.append('signature', this.signature);
     data.append('bankPassBook', this.bankPassBook);
+    data.append('allData', allData);
 
     //console.log(data);
     this.cs.saveLoanApplicationFormData(data).subscribe((d: any) => {

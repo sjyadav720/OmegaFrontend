@@ -1,16 +1,13 @@
 export class EnquiryDetails {
-
-
-    customerId:number
-	customerFirstName:String
-	customerLastName:String
-	customerLoanFormFillDate:string
-	email:string
-	mobileNo:number
-	pancardNo:String
-	status:string
-	annualIncome:number
-	customerCibilScore:number;
-
-
+  //field matching with backend pojo
+  customerId: number;
+  customerFirstName: string;
+  customerMiddleName: string;
+  customerLastName: string;
+  customerLoanFormFillDate: string;
+  customerEmail: string;
+  customerMobileNumber: number;
+  customerPanCard: string;
+  annualIncome: number;
+  customerCibilScore: number;
 }
